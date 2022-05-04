@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务端渲染的探索与实践 | 程序员思语</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script src="/assets/js/autopush-baidu.js"></script>
+    <script src="/assets/js/autopush-360.js"></script>
+    <meta name="description" content="程序员思语个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.23ddddd1.css" as="style"><link rel="preload" href="/assets/js/app.9a7aa7da.js" as="script"><link rel="preload" href="/assets/js/45.99a3547d.js" as="script"><link rel="preload" href="/assets/js/2.eeca2164.js" as="script"><link rel="preload" href="/assets/js/72.ec17e723.js" as="script"><link rel="prefetch" href="/assets/js/10.efa00aa1.js"><link rel="prefetch" href="/assets/js/100.5d8f07f9.js"><link rel="prefetch" href="/assets/js/101.12bf9e38.js"><link rel="prefetch" href="/assets/js/102.6a9b4789.js"><link rel="prefetch" href="/assets/js/103.1896ac27.js"><link rel="prefetch" href="/assets/js/104.3eaf1060.js"><link rel="prefetch" href="/assets/js/105.04b7a748.js"><link rel="prefetch" href="/assets/js/106.473fefb1.js"><link rel="prefetch" href="/assets/js/107.4baf2120.js"><link rel="prefetch" href="/assets/js/108.785bd85a.js"><link rel="prefetch" href="/assets/js/109.26310598.js"><link rel="prefetch" href="/assets/js/11.266365e0.js"><link rel="prefetch" href="/assets/js/110.e627880f.js"><link rel="prefetch" href="/assets/js/111.28fcf7d6.js"><link rel="prefetch" href="/assets/js/112.6d47389e.js"><link rel="prefetch" href="/assets/js/113.fa1c8a31.js"><link rel="prefetch" href="/assets/js/114.204f9ff5.js"><link rel="prefetch" href="/assets/js/115.a7b15e52.js"><link rel="prefetch" href="/assets/js/116.b26fe275.js"><link rel="prefetch" href="/assets/js/117.09591d9c.js"><link rel="prefetch" href="/assets/js/118.f5ecbb2b.js"><link rel="prefetch" href="/assets/js/119.1beee065.js"><link rel="prefetch" href="/assets/js/12.88ccf36b.js"><link rel="prefetch" href="/assets/js/120.07d67d46.js"><link rel="prefetch" href="/assets/js/121.269a1379.js"><link rel="prefetch" href="/assets/js/122.534def5b.js"><link rel="prefetch" href="/assets/js/123.d3bbe913.js"><link rel="prefetch" href="/assets/js/124.7dd40d5a.js"><link rel="prefetch" href="/assets/js/125.6b746852.js"><link rel="prefetch" href="/assets/js/126.c3c8a927.js"><link rel="prefetch" href="/assets/js/127.c4deb22e.js"><link rel="prefetch" href="/assets/js/128.a10f8a5e.js"><link rel="prefetch" href="/assets/js/129.dc56eb4c.js"><link rel="prefetch" href="/assets/js/13.ea306a53.js"><link rel="prefetch" href="/assets/js/130.82df3f94.js"><link rel="prefetch" href="/assets/js/131.83659737.js"><link rel="prefetch" href="/assets/js/132.32263140.js"><link rel="prefetch" href="/assets/js/133.85756ff4.js"><link rel="prefetch" href="/assets/js/134.7c385905.js"><link rel="prefetch" href="/assets/js/135.ff9577ad.js"><link rel="prefetch" href="/assets/js/136.f6429275.js"><link rel="prefetch" href="/assets/js/137.fdde18fe.js"><link rel="prefetch" href="/assets/js/138.0665a9ca.js"><link rel="prefetch" href="/assets/js/139.d35f9735.js"><link rel="prefetch" href="/assets/js/14.d71709ea.js"><link rel="prefetch" href="/assets/js/140.c3eeac78.js"><link rel="prefetch" href="/assets/js/141.2e6c018c.js"><link rel="prefetch" href="/assets/js/142.d594d833.js"><link rel="prefetch" href="/assets/js/143.f0905229.js"><link rel="prefetch" href="/assets/js/144.b4fa47e6.js"><link rel="prefetch" href="/assets/js/145.cef2f196.js"><link rel="prefetch" href="/assets/js/146.6c5b5bd2.js"><link rel="prefetch" href="/assets/js/147.06d6415e.js"><link rel="prefetch" href="/assets/js/148.daa2aef4.js"><link rel="prefetch" href="/assets/js/149.a2eb9e99.js"><link rel="prefetch" href="/assets/js/15.c7ec1a1b.js"><link rel="prefetch" href="/assets/js/150.a45920b0.js"><link rel="prefetch" href="/assets/js/151.099829e8.js"><link rel="prefetch" href="/assets/js/152.fd1e487c.js"><link rel="prefetch" href="/assets/js/153.3fb2564f.js"><link rel="prefetch" href="/assets/js/154.77582580.js"><link rel="prefetch" href="/assets/js/155.ff966872.js"><link rel="prefetch" href="/assets/js/156.a75a12c1.js"><link rel="prefetch" href="/assets/js/157.714163f5.js"><link rel="prefetch" href="/assets/js/158.800faab3.js"><link rel="prefetch" href="/assets/js/159.53a68ffe.js"><link rel="prefetch" href="/assets/js/16.9cf439e7.js"><link rel="prefetch" href="/assets/js/160.f0de3abe.js"><link rel="prefetch" href="/assets/js/161.aef67afc.js"><link rel="prefetch" href="/assets/js/162.fc48976c.js"><link rel="prefetch" href="/assets/js/163.345bb4ad.js"><link rel="prefetch" href="/assets/js/164.726098dc.js"><link rel="prefetch" href="/assets/js/165.38f39905.js"><link rel="prefetch" href="/assets/js/166.675b91f5.js"><link rel="prefetch" href="/assets/js/167.b1bbc528.js"><link rel="prefetch" href="/assets/js/168.067cac4e.js"><link rel="prefetch" href="/assets/js/169.f8d1c083.js"><link rel="prefetch" href="/assets/js/17.77cc8084.js"><link rel="prefetch" href="/assets/js/170.3c89c3a8.js"><link rel="prefetch" href="/assets/js/171.6f8ef2dc.js"><link rel="prefetch" href="/assets/js/172.47997696.js"><link rel="prefetch" href="/assets/js/173.97369ef8.js"><link rel="prefetch" href="/assets/js/174.3f1d4ada.js"><link rel="prefetch" href="/assets/js/175.6f250d0d.js"><link rel="prefetch" href="/assets/js/176.c476908f.js"><link rel="prefetch" href="/assets/js/177.070eb013.js"><link rel="prefetch" href="/assets/js/178.cf43301a.js"><link rel="prefetch" href="/assets/js/179.6df69364.js"><link rel="prefetch" href="/assets/js/18.58e75a9e.js"><link rel="prefetch" href="/assets/js/19.486266d1.js"><link rel="prefetch" href="/assets/js/20.adc2d276.js"><link rel="prefetch" href="/assets/js/21.db506430.js"><link rel="prefetch" href="/assets/js/22.eb94b3b5.js"><link rel="prefetch" href="/assets/js/23.887f0c17.js"><link rel="prefetch" href="/assets/js/24.cd9b0cac.js"><link rel="prefetch" href="/assets/js/25.598ee441.js"><link rel="prefetch" href="/assets/js/26.a8a16beb.js"><link rel="prefetch" href="/assets/js/27.2d6352c7.js"><link rel="prefetch" href="/assets/js/28.4a83baa7.js"><link rel="prefetch" href="/assets/js/29.bc5ca9c8.js"><link rel="prefetch" href="/assets/js/3.7727965b.js"><link rel="prefetch" href="/assets/js/30.24b66fb8.js"><link rel="prefetch" href="/assets/js/31.f424143f.js"><link rel="prefetch" href="/assets/js/32.2bcffb44.js"><link rel="prefetch" href="/assets/js/33.a92f4dd5.js"><link rel="prefetch" href="/assets/js/34.993794f0.js"><link rel="prefetch" href="/assets/js/35.f4312cfe.js"><link rel="prefetch" href="/assets/js/36.22b33fc6.js"><link rel="prefetch" href="/assets/js/37.29bab3e2.js"><link rel="prefetch" href="/assets/js/38.db730eea.js"><link rel="prefetch" href="/assets/js/39.3b0af3d4.js"><link rel="prefetch" href="/assets/js/4.36c2b48f.js"><link rel="prefetch" href="/assets/js/40.cbcfa53a.js"><link rel="prefetch" href="/assets/js/41.cc547f2a.js"><link rel="prefetch" href="/assets/js/42.671c3c8c.js"><link rel="prefetch" href="/assets/js/43.38721000.js"><link rel="prefetch" href="/assets/js/44.45d5caed.js"><link rel="prefetch" href="/assets/js/46.a0eac4f4.js"><link rel="prefetch" href="/assets/js/47.bbfdd998.js"><link rel="prefetch" href="/assets/js/48.5cc655b0.js"><link rel="prefetch" href="/assets/js/49.96dfdb68.js"><link rel="prefetch" href="/assets/js/5.de06982c.js"><link rel="prefetch" href="/assets/js/50.922bd3f5.js"><link rel="prefetch" href="/assets/js/51.b31d0969.js"><link rel="prefetch" href="/assets/js/52.4a9e67a9.js"><link rel="prefetch" href="/assets/js/53.89329de3.js"><link rel="prefetch" href="/assets/js/54.4136713b.js"><link rel="prefetch" href="/assets/js/55.161344b7.js"><link rel="prefetch" href="/assets/js/56.7e8df4fb.js"><link rel="prefetch" href="/assets/js/57.708cd756.js"><link rel="prefetch" href="/assets/js/58.526d6afa.js"><link rel="prefetch" href="/assets/js/59.d27f25bc.js"><link rel="prefetch" href="/assets/js/6.7207dc06.js"><link rel="prefetch" href="/assets/js/60.9f4087f7.js"><link rel="prefetch" href="/assets/js/61.9bc26b94.js"><link rel="prefetch" href="/assets/js/62.ab950062.js"><link rel="prefetch" href="/assets/js/63.6bb2f66d.js"><link rel="prefetch" href="/assets/js/64.898b4311.js"><link rel="prefetch" href="/assets/js/65.553a7610.js"><link rel="prefetch" href="/assets/js/66.bbe58a33.js"><link rel="prefetch" href="/assets/js/67.69f09bcf.js"><link rel="prefetch" href="/assets/js/68.8c22fc8a.js"><link rel="prefetch" href="/assets/js/69.24b55957.js"><link rel="prefetch" href="/assets/js/7.2508a8d3.js"><link rel="prefetch" href="/assets/js/70.a9562950.js"><link rel="prefetch" href="/assets/js/71.3f5184f9.js"><link rel="prefetch" href="/assets/js/73.e6987c1d.js"><link rel="prefetch" href="/assets/js/74.651351e4.js"><link rel="prefetch" href="/assets/js/75.36c1f490.js"><link rel="prefetch" href="/assets/js/76.b934f71e.js"><link rel="prefetch" href="/assets/js/77.cd96246d.js"><link rel="prefetch" href="/assets/js/78.cf23e0f3.js"><link rel="prefetch" href="/assets/js/79.63dc96a7.js"><link rel="prefetch" href="/assets/js/8.b697185c.js"><link rel="prefetch" href="/assets/js/80.c9a8f488.js"><link rel="prefetch" href="/assets/js/81.fc0ab67f.js"><link rel="prefetch" href="/assets/js/82.71f7f69b.js"><link rel="prefetch" href="/assets/js/83.94560ac7.js"><link rel="prefetch" href="/assets/js/84.35e1adb8.js"><link rel="prefetch" href="/assets/js/85.3a8003dc.js"><link rel="prefetch" href="/assets/js/86.2f386e8f.js"><link rel="prefetch" href="/assets/js/87.f00181da.js"><link rel="prefetch" href="/assets/js/88.6c2f3b9b.js"><link rel="prefetch" href="/assets/js/89.6b50302a.js"><link rel="prefetch" href="/assets/js/9.f2e3638d.js"><link rel="prefetch" href="/assets/js/90.677b4ef5.js"><link rel="prefetch" href="/assets/js/91.e27f36b9.js"><link rel="prefetch" href="/assets/js/92.e4d83b31.js"><link rel="prefetch" href="/assets/js/93.f58fb5e9.js"><link rel="prefetch" href="/assets/js/94.72807ad9.js"><link rel="prefetch" href="/assets/js/95.3f021f14.js"><link rel="prefetch" href="/assets/js/96.66b26129.js"><link rel="prefetch" href="/assets/js/97.3508edbe.js"><link rel="prefetch" href="/assets/js/98.681b1648.js"><link rel="prefetch" href="/assets/js/99.eda8b591.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23ddddd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员思语</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>日常博客</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/axios/" class="sidebar-link">No.1 学习 axios ，打造属于自己的请求库</a></li><li><a href="/blog/koa/" class="sidebar-link">No.2 学习 koa 源码的整体架构，浅析koa洋葱模型原理和co原理</a></li><li><a href="/blog/lodash/" class="sidebar-link">No.3 学习 lodash ，打造属于自己的函数式编程类库</a></li><li><a href="/blog/redux/" class="sidebar-link">No.4 学习 redux ，深入理解 redux 及其中间件原理</a></li><li><a href="/blog/sentry/" class="sidebar-link">No.5 学习 sentry 源码整体架构，打造属于自己的前端异常监控SDK</a></li><li><a href="/blog/timeline/" class="sidebar-link">No.6 Time Line</a></li><li><a href="/blog/underscore/" class="sidebar-link">No.7 学习 underscore ，打造属于自己的函数式编程类库</a></li><li><a href="/blog/vuex/" class="sidebar-link">No.8 学习 vuex ，打造属于自己的状态管理库</a></li><li><a href="/blog/miniprogram/login.html" class="sidebar-link">小程序（五）用户登录架构设计</a></li><li><a href="/blog/performance/1.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li><li><a href="/blog/performance/2.html" class="sidebar-link">图片优化——质量与性能的博弈</a></li><li><a href="/blog/performance/3.html" class="sidebar-link">Performance、LightHouse 与性能 API</a></li><li><a href="/blog/performance/4.html" aria-current="page" class="active sidebar-link">服务端渲染的探索与实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/performance/4.html#服务端渲染的运行机制" class="sidebar-link">服务端渲染的运行机制</a></li><li class="sidebar-sub-header"><a href="/blog/performance/4.html#服务端渲染解决了什么性能问题" class="sidebar-link">服务端渲染解决了什么性能问题</a></li><li class="sidebar-sub-header"><a href="/blog/performance/4.html#服务端渲染的应用实例" class="sidebar-link">服务端渲染的应用实例</a></li><li class="sidebar-sub-header"><a href="/blog/performance/4.html#服务端渲染的应用场景" class="sidebar-link">服务端渲染的应用场景</a></li></ul></li><li><a href="/blog/performance/5.html" class="sidebar-link">知己知彼——解锁浏览器背后的运行机制</a></li><li><a href="/blog/performance/6.html" class="sidebar-link">对症下药—— DOM 优化原理与基本实践</a></li><li><a href="/blog/performance/7.html" class="sidebar-link">千方百计——Event Loop 与异步更新策略</a></li><li><a href="/blog/performance/8.html" class="sidebar-link">前言</a></li><li><a href="/blog/performance/9.html" class="sidebar-link">优化首屏体验——Lazy-Load 初探</a></li><li><a href="/blog/performance/10.html" class="sidebar-link">事件的节流（throttle）与防抖（debounce）</a></li><li><a href="/blog/performance/11.html" class="sidebar-link">/blog/performance/11.html</a></li><li><a href="/blog/performance/12.html" class="sidebar-link">浏览器缓存机制介绍与缓存策略剖析</a></li><li><a href="/blog/performance/13.html" class="sidebar-link">CDN 的缓存与回源机制解析</a></li><li><a href="/blog/tabbar/" class="sidebar-link">小程序自定义TabBar</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java训练营</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="服务端渲染的探索与实践"><a href="#服务端渲染的探索与实践" class="header-anchor">#</a> 服务端渲染的探索与实践</h1> <p>服务端渲染（SSR）近两年炒得很火热，相信各位同学对这个名词多少有所耳闻。本节我们将围绕“是什么”（服务端渲染的运行机制）、“为什么”（服务端渲染解决了什么性能问题 ）、“怎么做”（服务端渲染的应用实例与使用场景）这三个点，对服务端渲染进行探索。</p> <p>服务端渲染是一个相对的概念，它的对立面是“客户端渲染”。在运行机制解析这部分，我们会借力客户端渲染的概念，来帮大家理解服务端渲染的工作方式。基于对工作方式的了解，再去深挖它的原理与优势。</p> <p>任何知识点都不是“一座孤岛”，服务端渲染的实践往往与当下流行的前端技术（譬如 Vue，React，Redux 等）紧密结合。本节下半场将以 React 和 Vue 下的服务端渲染实现为例，为大家呈现一个完整的 SSR 实现过程。</p> <h2 id="服务端渲染的运行机制"><a href="#服务端渲染的运行机制" class="header-anchor">#</a> 服务端渲染的运行机制</h2> <p>相对于服务端渲染，同学们普遍对客户端渲染接受度更高一些，所以我们先从大家喜闻乐见的客户端渲染说起。</p> <h3 id="客户端渲染"><a href="#客户端渲染" class="header-anchor">#</a> 客户端渲染</h3> <p>客户端渲染模式下，服务端会把渲染需要的静态文件发送给客户端，客户端加载过来之后，自己在浏览器里跑一遍 JS，根据 JS 的运行结果，生成相应的 DOM。这种特性使得客户端渲染的源代码总是特别简洁，往往是这个德行：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;我是客户端渲染的页面&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id='root'&gt;&lt;/div&gt;
+    &lt;script src='index.js'&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre></div><p>根节点下到底是什么内容呢？你不知道，我不知道，只有浏览器把 index.js 跑过一遍后才知道，这就是典型的客户端渲染。</p> <p><strong>页面上呈现的内容，你在 html 源文件里里找不到</strong>——这正是它的特点。</p> <h3 id="服务端渲染"><a href="#服务端渲染" class="header-anchor">#</a> 服务端渲染</h3> <p>服务端渲染的模式下，当用户第一次请求页面时，由服务器把需要的组件或页面渲染成 HTML 字符串，然后把它返回给客户端。客户端拿到手的，是可以直接渲染然后呈现给用户的 HTML 内容，不需要为了生成 DOM 内容自己再去跑一遍 JS 代码。</p> <p>使用服务端渲染的网站，可以说是“所见即所得”，<strong>页面上呈现的内容，我们在 html 源文件里也能找到</strong>。</p> <p>比如知乎就是典型的服务端渲染案例：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/26/166162c1cbad2c64?w=2736&amp;h=582&amp;f=png&amp;s=351372" alt=""></p> <p>zhihu.com 返回的 HTML 文件已经是可以直接进行渲染的内容了。</p> <h2 id="服务端渲染解决了什么性能问题"><a href="#服务端渲染解决了什么性能问题" class="header-anchor">#</a> 服务端渲染解决了什么性能问题</h2> <p>事实上，很多网站是出于效益的考虑才启用服务端渲染，性能倒是在其次。</p> <p>假设 A 网站页面中有一个关键字叫“前端性能优化”，这个关键字是 JS 代码跑过一遍后添加到 HTML 页面中的。那么客户端渲染模式下，我们在搜索引擎搜索这个关键字，是找不到 A 网站的——搜索引擎只会查找现成的内容，不会帮你跑 JS 代码。A 网站的运营方见此情形，感到很头大：搜索引擎搜不出来，用户找不到我们，谁还会用我的网站呢？为了把“现成的内容”拿给搜索引擎看，A 网站不得不启用服务端渲染。</p> <p>但性能在其次，不代表性能不重要。服务端渲染解决了一个非常关键的性能问题——首屏加载速度过慢。在客户端渲染模式下，我们除了加载 HTML，还要等渲染所需的这部分 JS 加载完，之后还得把这部分 JS 在浏览器上再跑一遍。这一切都是发生在用户点击了我们的链接之后的事情，在这个过程结束之前，用户始终见不到我们网页的庐山真面目，也就是说用户一直在等！相比之下，服务端渲染模式下，服务器给到客户端的已经是一个直接可以拿来呈现给用户的网页，中间环节早在服务端就帮我们做掉了，用户岂不“美滋滋”？</p> <h2 id="服务端渲染的应用实例"><a href="#服务端渲染的应用实例" class="header-anchor">#</a> 服务端渲染的应用实例</h2> <p>下面我们先来看一下在一个 React 项目里，服务端渲染是怎么实现的。本例中，我们使用 Express 搭建后端服务。</p> <p>项目中有一个叫做 VDom 的 React 组件，它的内容如下。</p> <p>VDom.js:</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react'
+
+const VDom = () =&gt; {
+  return &lt;div&gt;我是一个被渲染为真实DOM的虚拟DOM&lt;/div&gt;
+}
+
+export default VDom
+
+</code></pre></div><p>在服务端的入口文件中，我引入这个组件，对它进行渲染：</p> <div class="language- extra-class"><pre class="language-text"><code>import express from 'express'
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import VDom from './VDom'
+
+// 创建一个express应用
+const app = express()
+// renderToString 是把虚拟DOM转化为真实DOM的关键方法
+const RDom = renderToString(&lt;VDom /&gt;)
+// 编写HTML模板，插入转化后的真实DOM内容
+const Page = `
+            &lt;html&gt;
+              &lt;head&gt;
+                &lt;title&gt;test&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;span&gt;服务端渲染出了真实DOM:  &lt;/span&gt;
+                ${RDom}
+              &lt;/body&gt;
+            &lt;/html&gt;
+            `
+            
+// 配置HTML内容对应的路由
+app.get('/index', function(req, res) {
+  res.send(Page)
+})
+
+// 配置端口号
+const server = app.listen(8000)
+
+</code></pre></div><p>根据我们的路由配置，当我访问 <a href="http://localhost:8000/index" target="_blank" rel="noopener noreferrer">http://localhost:8000/index<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 时，就可以呈现出服务端渲染的结果了：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/26/16615e831fa4c113?w=1502&amp;h=408&amp;f=png&amp;s=129026" alt=""></p> <p>我们可以看到，VDom 组件已经被 renderToString 转化为了一个内容为<code>&lt;div data-reactroot=&quot;&quot;&gt;我是一个被渲染为真实DOM的虚拟DOM&lt;/div&gt;</code>的字符串，这个字符串被插入 HTML 代码，成为了真实 DOM 树的一部分。</p> <p>那么 Vue 是如何实现服务端渲染的呢？</p> <p>其实是一个套路，我这里基于 <a href="https://ssr.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93-ssr-%EF%BC%9F" target="_blank" rel="noopener noreferrer">Vue SSR 指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 中官方给出的例子为大家讲解 Vue 中的实现思路（思路见注释）。</p> <p>该示例直接将 Vue 实例整合进了服务端的入口文件中：</p> <div class="language- extra-class"><pre class="language-text"><code>const Vue = require('vue')
+// 创建一个express应用
+const server = require('express')()
+// 提取出renderer实例
+const renderer = require('vue-server-renderer').createRenderer()
+
+server.get('*', (req, res) =&gt; {
+  // 编写Vue实例（虚拟DOM节点）
+  const app = new Vue({
+    data: {
+      url: req.url
+    },
+    // 编写模板HTML的内容
+    template: `&lt;div&gt;访问的 URL 是： {{ url }}&lt;/div&gt;`
+  })
+    
+  // renderToString 是把Vue实例转化为真实DOM的关键方法
+  renderer.renderToString(app, (err, html) =&gt; {
+    if (err) {
+      res.status(500).end('Internal Server Error')
+      return
+    }
+    // 把渲染出来的真实DOM字符串插入HTML模板中
+    res.end(`
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;/head&gt;
+        &lt;body&gt;${html}&lt;/body&gt;
+      &lt;/html&gt;
+    `)
+  })
+})
+
+server.listen(8080)
+
+</code></pre></div><p>大家对比一下 React 项目中的注释内容，是不是发现这两段代码从本质上来说区别不大呢？</p> <p>以上两个小🌰，为大家演示了基本的服务端渲染实现流程。</p> <p>实际项目比这些复杂很多，但万变不离其宗。强调的只有两点：一是这个 renderToString() 方法；二是把转化结果“塞”进模板里的这一步。这两个操作是服务端渲染的灵魂操作。在虚拟 DOM“横行”的当下，服务端渲染不再是早年 JSP 里简单粗暴的字符串拼接过程，它还要求这一端要具备将虚拟 DOM 转化为真实 DOM 的能力。与其说是“把 JS 在服务器上先跑一遍”，不如说是“把 Vue、React 等框架代码先在 Node 上跑一遍”。</p> <h2 id="服务端渲染的应用场景"><a href="#服务端渲染的应用场景" class="header-anchor">#</a> 服务端渲染的应用场景</h2> <p>打眼一看，这个服务端渲染给浏览器省了这么多事儿，性能肯定是质的飞跃啊！喜闻乐见！但是大家打开自己经常访问的那些网页看一看，会发现仍然有许多网站压根儿不用服务端渲染——看来这个东西也不是万能的。</p> <p>根据我们前面的描述，不难看出，服务端渲染本质上是<strong>本该浏览器做的事情，分担给服务器去做</strong>。这样当资源抵达浏览器时，它呈现的速度就快了。乍一看好像很合理：浏览器性能毕竟有限，服务器多牛逼！能者多劳，就该让服务器多干点活！</p> <p>但仔细想想，在这个网民遍地的时代，几乎有多少个用户就有多少台浏览器。用户拥有的浏览器总量多到数不清，那么一个公司的服务器又有多少台呢？我们把这么多台浏览器的渲染压力集中起来，分散给相比之下数量并不多的服务器，服务器肯定是承受不住的。</p> <p>这样分析下来，服务端渲染也并非万全之策。在实践中，我一般会建议大家先忘记服务端渲染这个事情——服务器稀少而宝贵，但首屏渲染体验和 SEO 的优化方案却很多——我们最好先把能用的低成本“大招”都用完。除非网页对性能要求太高了，以至于所有的招式都用完了，性能表现还是不尽人意，这时候我们就可以考虑向老板多申请几台服务器，把服务端渲染搞起来了~</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/performance/3.html" class="prev">
+        Performance、LightHouse 与性能 API
+      </a></span> <span class="next"><a href="/blog/performance/5.html">
+        知己知彼——解锁浏览器背后的运行机制
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9a7aa7da.js" defer></script><script src="/assets/js/45.99a3547d.js" defer></script><script src="/assets/js/2.eeca2164.js" defer></script><script src="/assets/js/72.ec17e723.js" defer></script>
+  </body>
+</html>

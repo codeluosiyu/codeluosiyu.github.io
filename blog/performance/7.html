@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>千方百计——Event Loop 与异步更新策略 | 程序员思语</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script src="/assets/js/autopush-baidu.js"></script>
+    <script src="/assets/js/autopush-360.js"></script>
+    <meta name="description" content="程序员思语个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.23ddddd1.css" as="style"><link rel="preload" href="/assets/js/app.9a7aa7da.js" as="script"><link rel="preload" href="/assets/js/45.99a3547d.js" as="script"><link rel="preload" href="/assets/js/2.eeca2164.js" as="script"><link rel="preload" href="/assets/js/75.36c1f490.js" as="script"><link rel="prefetch" href="/assets/js/10.efa00aa1.js"><link rel="prefetch" href="/assets/js/100.5d8f07f9.js"><link rel="prefetch" href="/assets/js/101.12bf9e38.js"><link rel="prefetch" href="/assets/js/102.6a9b4789.js"><link rel="prefetch" href="/assets/js/103.1896ac27.js"><link rel="prefetch" href="/assets/js/104.3eaf1060.js"><link rel="prefetch" href="/assets/js/105.04b7a748.js"><link rel="prefetch" href="/assets/js/106.473fefb1.js"><link rel="prefetch" href="/assets/js/107.4baf2120.js"><link rel="prefetch" href="/assets/js/108.785bd85a.js"><link rel="prefetch" href="/assets/js/109.26310598.js"><link rel="prefetch" href="/assets/js/11.266365e0.js"><link rel="prefetch" href="/assets/js/110.e627880f.js"><link rel="prefetch" href="/assets/js/111.28fcf7d6.js"><link rel="prefetch" href="/assets/js/112.6d47389e.js"><link rel="prefetch" href="/assets/js/113.fa1c8a31.js"><link rel="prefetch" href="/assets/js/114.204f9ff5.js"><link rel="prefetch" href="/assets/js/115.a7b15e52.js"><link rel="prefetch" href="/assets/js/116.b26fe275.js"><link rel="prefetch" href="/assets/js/117.09591d9c.js"><link rel="prefetch" href="/assets/js/118.f5ecbb2b.js"><link rel="prefetch" href="/assets/js/119.1beee065.js"><link rel="prefetch" href="/assets/js/12.88ccf36b.js"><link rel="prefetch" href="/assets/js/120.07d67d46.js"><link rel="prefetch" href="/assets/js/121.269a1379.js"><link rel="prefetch" href="/assets/js/122.534def5b.js"><link rel="prefetch" href="/assets/js/123.d3bbe913.js"><link rel="prefetch" href="/assets/js/124.7dd40d5a.js"><link rel="prefetch" href="/assets/js/125.6b746852.js"><link rel="prefetch" href="/assets/js/126.c3c8a927.js"><link rel="prefetch" href="/assets/js/127.c4deb22e.js"><link rel="prefetch" href="/assets/js/128.a10f8a5e.js"><link rel="prefetch" href="/assets/js/129.dc56eb4c.js"><link rel="prefetch" href="/assets/js/13.ea306a53.js"><link rel="prefetch" href="/assets/js/130.82df3f94.js"><link rel="prefetch" href="/assets/js/131.83659737.js"><link rel="prefetch" href="/assets/js/132.32263140.js"><link rel="prefetch" href="/assets/js/133.85756ff4.js"><link rel="prefetch" href="/assets/js/134.7c385905.js"><link rel="prefetch" href="/assets/js/135.ff9577ad.js"><link rel="prefetch" href="/assets/js/136.f6429275.js"><link rel="prefetch" href="/assets/js/137.fdde18fe.js"><link rel="prefetch" href="/assets/js/138.0665a9ca.js"><link rel="prefetch" href="/assets/js/139.d35f9735.js"><link rel="prefetch" href="/assets/js/14.d71709ea.js"><link rel="prefetch" href="/assets/js/140.c3eeac78.js"><link rel="prefetch" href="/assets/js/141.2e6c018c.js"><link rel="prefetch" href="/assets/js/142.d594d833.js"><link rel="prefetch" href="/assets/js/143.f0905229.js"><link rel="prefetch" href="/assets/js/144.b4fa47e6.js"><link rel="prefetch" href="/assets/js/145.cef2f196.js"><link rel="prefetch" href="/assets/js/146.6c5b5bd2.js"><link rel="prefetch" href="/assets/js/147.06d6415e.js"><link rel="prefetch" href="/assets/js/148.daa2aef4.js"><link rel="prefetch" href="/assets/js/149.a2eb9e99.js"><link rel="prefetch" href="/assets/js/15.c7ec1a1b.js"><link rel="prefetch" href="/assets/js/150.a45920b0.js"><link rel="prefetch" href="/assets/js/151.099829e8.js"><link rel="prefetch" href="/assets/js/152.fd1e487c.js"><link rel="prefetch" href="/assets/js/153.3fb2564f.js"><link rel="prefetch" href="/assets/js/154.77582580.js"><link rel="prefetch" href="/assets/js/155.ff966872.js"><link rel="prefetch" href="/assets/js/156.a75a12c1.js"><link rel="prefetch" href="/assets/js/157.714163f5.js"><link rel="prefetch" href="/assets/js/158.800faab3.js"><link rel="prefetch" href="/assets/js/159.53a68ffe.js"><link rel="prefetch" href="/assets/js/16.9cf439e7.js"><link rel="prefetch" href="/assets/js/160.f0de3abe.js"><link rel="prefetch" href="/assets/js/161.aef67afc.js"><link rel="prefetch" href="/assets/js/162.fc48976c.js"><link rel="prefetch" href="/assets/js/163.345bb4ad.js"><link rel="prefetch" href="/assets/js/164.726098dc.js"><link rel="prefetch" href="/assets/js/165.38f39905.js"><link rel="prefetch" href="/assets/js/166.675b91f5.js"><link rel="prefetch" href="/assets/js/167.b1bbc528.js"><link rel="prefetch" href="/assets/js/168.067cac4e.js"><link rel="prefetch" href="/assets/js/169.f8d1c083.js"><link rel="prefetch" href="/assets/js/17.77cc8084.js"><link rel="prefetch" href="/assets/js/170.3c89c3a8.js"><link rel="prefetch" href="/assets/js/171.6f8ef2dc.js"><link rel="prefetch" href="/assets/js/172.47997696.js"><link rel="prefetch" href="/assets/js/173.97369ef8.js"><link rel="prefetch" href="/assets/js/174.3f1d4ada.js"><link rel="prefetch" href="/assets/js/175.6f250d0d.js"><link rel="prefetch" href="/assets/js/176.c476908f.js"><link rel="prefetch" href="/assets/js/177.070eb013.js"><link rel="prefetch" href="/assets/js/178.cf43301a.js"><link rel="prefetch" href="/assets/js/179.6df69364.js"><link rel="prefetch" href="/assets/js/18.58e75a9e.js"><link rel="prefetch" href="/assets/js/19.486266d1.js"><link rel="prefetch" href="/assets/js/20.adc2d276.js"><link rel="prefetch" href="/assets/js/21.db506430.js"><link rel="prefetch" href="/assets/js/22.eb94b3b5.js"><link rel="prefetch" href="/assets/js/23.887f0c17.js"><link rel="prefetch" href="/assets/js/24.cd9b0cac.js"><link rel="prefetch" href="/assets/js/25.598ee441.js"><link rel="prefetch" href="/assets/js/26.a8a16beb.js"><link rel="prefetch" href="/assets/js/27.2d6352c7.js"><link rel="prefetch" href="/assets/js/28.4a83baa7.js"><link rel="prefetch" href="/assets/js/29.bc5ca9c8.js"><link rel="prefetch" href="/assets/js/3.7727965b.js"><link rel="prefetch" href="/assets/js/30.24b66fb8.js"><link rel="prefetch" href="/assets/js/31.f424143f.js"><link rel="prefetch" href="/assets/js/32.2bcffb44.js"><link rel="prefetch" href="/assets/js/33.a92f4dd5.js"><link rel="prefetch" href="/assets/js/34.993794f0.js"><link rel="prefetch" href="/assets/js/35.f4312cfe.js"><link rel="prefetch" href="/assets/js/36.22b33fc6.js"><link rel="prefetch" href="/assets/js/37.29bab3e2.js"><link rel="prefetch" href="/assets/js/38.db730eea.js"><link rel="prefetch" href="/assets/js/39.3b0af3d4.js"><link rel="prefetch" href="/assets/js/4.36c2b48f.js"><link rel="prefetch" href="/assets/js/40.cbcfa53a.js"><link rel="prefetch" href="/assets/js/41.cc547f2a.js"><link rel="prefetch" href="/assets/js/42.671c3c8c.js"><link rel="prefetch" href="/assets/js/43.38721000.js"><link rel="prefetch" href="/assets/js/44.45d5caed.js"><link rel="prefetch" href="/assets/js/46.a0eac4f4.js"><link rel="prefetch" href="/assets/js/47.bbfdd998.js"><link rel="prefetch" href="/assets/js/48.5cc655b0.js"><link rel="prefetch" href="/assets/js/49.96dfdb68.js"><link rel="prefetch" href="/assets/js/5.de06982c.js"><link rel="prefetch" href="/assets/js/50.922bd3f5.js"><link rel="prefetch" href="/assets/js/51.b31d0969.js"><link rel="prefetch" href="/assets/js/52.4a9e67a9.js"><link rel="prefetch" href="/assets/js/53.89329de3.js"><link rel="prefetch" href="/assets/js/54.4136713b.js"><link rel="prefetch" href="/assets/js/55.161344b7.js"><link rel="prefetch" href="/assets/js/56.7e8df4fb.js"><link rel="prefetch" href="/assets/js/57.708cd756.js"><link rel="prefetch" href="/assets/js/58.526d6afa.js"><link rel="prefetch" href="/assets/js/59.d27f25bc.js"><link rel="prefetch" href="/assets/js/6.7207dc06.js"><link rel="prefetch" href="/assets/js/60.9f4087f7.js"><link rel="prefetch" href="/assets/js/61.9bc26b94.js"><link rel="prefetch" href="/assets/js/62.ab950062.js"><link rel="prefetch" href="/assets/js/63.6bb2f66d.js"><link rel="prefetch" href="/assets/js/64.898b4311.js"><link rel="prefetch" href="/assets/js/65.553a7610.js"><link rel="prefetch" href="/assets/js/66.bbe58a33.js"><link rel="prefetch" href="/assets/js/67.69f09bcf.js"><link rel="prefetch" href="/assets/js/68.8c22fc8a.js"><link rel="prefetch" href="/assets/js/69.24b55957.js"><link rel="prefetch" href="/assets/js/7.2508a8d3.js"><link rel="prefetch" href="/assets/js/70.a9562950.js"><link rel="prefetch" href="/assets/js/71.3f5184f9.js"><link rel="prefetch" href="/assets/js/72.ec17e723.js"><link rel="prefetch" href="/assets/js/73.e6987c1d.js"><link rel="prefetch" href="/assets/js/74.651351e4.js"><link rel="prefetch" href="/assets/js/76.b934f71e.js"><link rel="prefetch" href="/assets/js/77.cd96246d.js"><link rel="prefetch" href="/assets/js/78.cf23e0f3.js"><link rel="prefetch" href="/assets/js/79.63dc96a7.js"><link rel="prefetch" href="/assets/js/8.b697185c.js"><link rel="prefetch" href="/assets/js/80.c9a8f488.js"><link rel="prefetch" href="/assets/js/81.fc0ab67f.js"><link rel="prefetch" href="/assets/js/82.71f7f69b.js"><link rel="prefetch" href="/assets/js/83.94560ac7.js"><link rel="prefetch" href="/assets/js/84.35e1adb8.js"><link rel="prefetch" href="/assets/js/85.3a8003dc.js"><link rel="prefetch" href="/assets/js/86.2f386e8f.js"><link rel="prefetch" href="/assets/js/87.f00181da.js"><link rel="prefetch" href="/assets/js/88.6c2f3b9b.js"><link rel="prefetch" href="/assets/js/89.6b50302a.js"><link rel="prefetch" href="/assets/js/9.f2e3638d.js"><link rel="prefetch" href="/assets/js/90.677b4ef5.js"><link rel="prefetch" href="/assets/js/91.e27f36b9.js"><link rel="prefetch" href="/assets/js/92.e4d83b31.js"><link rel="prefetch" href="/assets/js/93.f58fb5e9.js"><link rel="prefetch" href="/assets/js/94.72807ad9.js"><link rel="prefetch" href="/assets/js/95.3f021f14.js"><link rel="prefetch" href="/assets/js/96.66b26129.js"><link rel="prefetch" href="/assets/js/97.3508edbe.js"><link rel="prefetch" href="/assets/js/98.681b1648.js"><link rel="prefetch" href="/assets/js/99.eda8b591.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23ddddd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员思语</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>日常博客</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/axios/" class="sidebar-link">No.1 学习 axios ，打造属于自己的请求库</a></li><li><a href="/blog/koa/" class="sidebar-link">No.2 学习 koa 源码的整体架构，浅析koa洋葱模型原理和co原理</a></li><li><a href="/blog/lodash/" class="sidebar-link">No.3 学习 lodash ，打造属于自己的函数式编程类库</a></li><li><a href="/blog/redux/" class="sidebar-link">No.4 学习 redux ，深入理解 redux 及其中间件原理</a></li><li><a href="/blog/sentry/" class="sidebar-link">No.5 学习 sentry 源码整体架构，打造属于自己的前端异常监控SDK</a></li><li><a href="/blog/timeline/" class="sidebar-link">No.6 Time Line</a></li><li><a href="/blog/underscore/" class="sidebar-link">No.7 学习 underscore ，打造属于自己的函数式编程类库</a></li><li><a href="/blog/vuex/" class="sidebar-link">No.8 学习 vuex ，打造属于自己的状态管理库</a></li><li><a href="/blog/miniprogram/login.html" class="sidebar-link">小程序（五）用户登录架构设计</a></li><li><a href="/blog/performance/1.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li><li><a href="/blog/performance/2.html" class="sidebar-link">图片优化——质量与性能的博弈</a></li><li><a href="/blog/performance/3.html" class="sidebar-link">Performance、LightHouse 与性能 API</a></li><li><a href="/blog/performance/4.html" class="sidebar-link">服务端渲染的探索与实践</a></li><li><a href="/blog/performance/5.html" class="sidebar-link">知己知彼——解锁浏览器背后的运行机制</a></li><li><a href="/blog/performance/6.html" class="sidebar-link">对症下药—— DOM 优化原理与基本实践</a></li><li><a href="/blog/performance/7.html" aria-current="page" class="active sidebar-link">千方百计——Event Loop 与异步更新策略</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/performance/7.html#前置知识-event-loop-中的-渲染时机" class="sidebar-link">前置知识：Event Loop 中的“渲染时机”</a></li><li class="sidebar-sub-header"><a href="/blog/performance/7.html#生产实践-异步更新策略-以-vue-为例" class="sidebar-link">生产实践：异步更新策略——以 Vue 为例</a></li><li class="sidebar-sub-header"><a href="/blog/performance/7.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/blog/performance/8.html" class="sidebar-link">前言</a></li><li><a href="/blog/performance/9.html" class="sidebar-link">优化首屏体验——Lazy-Load 初探</a></li><li><a href="/blog/performance/10.html" class="sidebar-link">事件的节流（throttle）与防抖（debounce）</a></li><li><a href="/blog/performance/11.html" class="sidebar-link">/blog/performance/11.html</a></li><li><a href="/blog/performance/12.html" class="sidebar-link">浏览器缓存机制介绍与缓存策略剖析</a></li><li><a href="/blog/performance/13.html" class="sidebar-link">CDN 的缓存与回源机制解析</a></li><li><a href="/blog/tabbar/" class="sidebar-link">小程序自定义TabBar</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java训练营</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="千方百计-event-loop-与异步更新策略"><a href="#千方百计-event-loop-与异步更新策略" class="header-anchor">#</a> 千方百计——Event Loop 与异步更新策略</h1> <p>Vue 和 React 都实现了异步更新策略。虽然实现的方式不尽相同，但都达到了减少 DOM 操作、避免过度渲染的目的。通过研究框架的运行机制，其设计思路将深化我们对 DOM 优化的理解，其实现手法将拓宽我们对 DOM 实践的认知。</p> <p>本节我们将基于 Event Loop 机制，对 Vue 的异步更新策略作探讨。</p> <h2 id="前置知识-event-loop-中的-渲染时机"><a href="#前置知识-event-loop-中的-渲染时机" class="header-anchor">#</a> 前置知识：Event Loop 中的“渲染时机”</h2> <p>搞懂 Event Loop，是理解 Vue 对 DOM 操作优化的第一步。</p> <h3 id="micro-task-与-macro-task"><a href="#micro-task-与-macro-task" class="header-anchor">#</a> Micro-Task 与 Macro-Task</h3> <p>事件循环中的异步队列有两种：macro（宏任务）队列和 micro（微任务）队列。</p> <p>常见的 macro-task 比如： setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作、UI 渲染等。<br>
+常见的 micro-task 比如: process.nextTick、Promise、MutationObserver 等。</p> <h3 id="event-loop-过程解析"><a href="#event-loop-过程解析" class="header-anchor">#</a> Event Loop 过程解析</h3> <p>基于对 micro 和 macro 的认知，我们来走一遍完整的事件循环过程。</p> <p>一个完整的 Event Loop 过程，可以概括为以下阶段：</p> <ul><li><p>初始状态：调用栈空。micro 队列空，macro 队列里有且只有一个 script 脚本（整体代码）。</p></li> <li><p>全局上下文（script 标签）被推入调用栈，同步代码执行。在执行的过程中，通过对一些接口的调用，可以产生新的 macro-task 与 micro-task，它们会分别被推入各自的任务队列里。同步代码执行完了，script 脚本会被移出 macro 队列，<strong>这个过程本质上是队列的 macro-task 的执行和出队的过程</strong>。</p></li> <li><p>上一步我们出队的是一个 macro-task，这一步我们处理的是 micro-task。但需要注意的是：当 macro-task 出队时，任务是<strong>一个一个</strong>执行的；而 micro-task 出队时，任务是<strong>一队一队</strong>执行的（如下图所示）。因此，我们处理 micro 队列这一步，会逐个执行队列中的任务并把它出队，直到队列被清空。</p></li></ul> <p><img src="https://user-gold-cdn.xitu.io/2018/10/1/1662fc9d8bf609a6?w=480&amp;h=410&amp;f=png&amp;s=8715" alt=""></p> <ul><li><p><strong>执行渲染操作，更新界面</strong>（敲黑板划重点）。</p></li> <li><p>检查是否存在 Web worker 任务，如果有，则对其进行处理 。</p></li></ul> <p>（上述过程循环往复，直到两个队列都清空）</p> <p>我们总结一下，每一次循环都是一个这样的过程：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/10/1/1662ff57ebe7a73f?w=857&amp;h=243&amp;f=png&amp;s=28272" alt=""></p> <h3 id="渲染的时机"><a href="#渲染的时机" class="header-anchor">#</a> 渲染的时机</h3> <p>大家现在思考一个这样的问题：假如我想要在异步任务里进行DOM更新，我该把它包装成 micro 还是 macro 呢？</p> <p>我们先假设它是一个 macro 任务，比如我在 script 脚本中用 setTimeout 来处理它：</p> <div class="language- extra-class"><pre class="language-text"><code>// task是一个用于修改DOM的回调
+setTimeout(task, 0)
+
+</code></pre></div><p>现在 task 被推入的 macro 队列。但因为 script 脚本本身是一个 macro 任务，所以本次执行完 script 脚本之后，下一个步骤就要去处理 micro 队列了，再往下就去执行了一次 render，对不对？</p> <p>但本次render我的目标task其实并没有执行，想要修改的DOM也没有修改，因此这一次的render其实是一次无效的render。</p> <p>macro 不 ok，我们转向 micro 试试看。我用 Promise 来把 task 包装成是一个 micro 任务：</p> <div class="language- extra-class"><pre class="language-text"><code>Promise.resolve().then(task)
+
+</code></pre></div><p>那么我们结束了对 script 脚本的执行，是不是紧接着就去处理 micro-task 队列了？micro-task 处理完，DOM 修改好了，紧接着就可以走 render 流程了——不需要再消耗多余的一次渲染，不需要再等待一轮事件循环，直接为用户呈现最即时的更新结果。</p> <p>因此，我们更新 DOM 的时间点，应该尽可能靠近渲染的时机。<strong>当我们需要在异步任务中实现 DOM 修改时，把它包装成 micro 任务是相对明智的选择</strong>。</p> <h2 id="生产实践-异步更新策略-以-vue-为例"><a href="#生产实践-异步更新策略-以-vue-为例" class="header-anchor">#</a> 生产实践：异步更新策略——以 Vue 为例</h2> <p>什么是异步更新？</p> <p>当我们使用 Vue 或 React 提供的接口去更新数据时，这个更新并不会立即生效，而是会被推入到一个队列里。待到适当的时机，队列中的更新任务会被<strong>批量触发</strong>。这就是异步更新。</p> <p>异步更新可以帮助我们避免过度渲染，是我们上节提到的“让 JS 为 DOM 分压”的典范之一。</p> <h3 id="异步更新的优越性"><a href="#异步更新的优越性" class="header-anchor">#</a> 异步更新的优越性</h3> <p>异步更新的特性在于它<strong>只看结果</strong>，因此渲染引擎<strong>不需要为过程买单</strong>。</p> <p>最典型的例子，比如有时我们会遇到这样的情况：</p> <div class="language- extra-class"><pre class="language-text"><code>// 任务一
+this.content = '第一次测试'
+// 任务二
+this.content = '第二次测试'
+// 任务三
+this.content = '第三次测试'
+
+</code></pre></div><p>我们在三个更新任务中对同一个状态修改了三次，如果我们采取传统的同步更新策略，那么就要操作三次 DOM。但本质上需要呈现给用户的目标内容其实只是第三次的结果，也就是说只有第三次的操作是有意义的——我们白白浪费了两次计算。</p> <p>但如果我们把这三个任务塞进异步更新队列里，它们会先在 JS 的层面上被<strong>批量执行完毕</strong>。当流程走到渲染这一步时，它仅仅需要针对有意义的计算结果操作一次 DOM——这就是异步更新的妙处。</p> <h3 id="vue状态更新手法-nexttick"><a href="#vue状态更新手法-nexttick" class="header-anchor">#</a> Vue状态更新手法：nextTick</h3> <p>Vue 每次想要更新一个状态的时候，会先把它这个更新操作给包装成一个异步操作派发出去。这件事情，在源码中是由一个叫做 nextTick 的函数来完成的：</p> <div class="language- extra-class"><pre class="language-text"><code>export function nextTick (cb?: Function, ctx?: Object) {
+  let _resolve
+  callbacks.push(() =&gt; {
+    if (cb) {
+      try {
+        cb.call(ctx)
+      } catch (e) {
+        handleError(e, ctx, 'nextTick')
+      }
+    } else if (_resolve) {
+      _resolve(ctx)
+    }
+  })
+  // 检查上一个异步任务队列（即名为callbacks的任务数组）是否派发和执行完毕了。pending此处相当于一个锁
+  if (!pending) {
+    // 若上一个异步任务队列已经执行完毕，则将pending设定为true（把锁锁上）
+    pending = true
+    // 是否要求一定要派发为macro任务
+    if (useMacroTask) {
+      macroTimerFunc()
+    } else {
+      // 如果不说明一定要macro 你们就全都是micro
+      microTimerFunc()
+    }
+  }
+  // $flow-disable-line
+  if (!cb &amp;&amp; typeof Promise !== 'undefined') {
+    return new Promise(resolve =&gt; {
+      _resolve = resolve
+    })
+  }
+}
+
+</code></pre></div><p>我们看到，Vue 的异步任务默认情况下都是用 Promise 来包装的，也就是是说它们都是 micro-task。这一点和我们“前置知识”中的渲染时机的分析不谋而合。</p> <p>为了带大家熟悉一下常见的 macro 和 micro 派发方式、加深对 Event Loop 的理解，我们继续细化解析一下 macroTimeFunc() 和 microTimeFunc() 两个方法。</p> <p>macroTimeFunc() 是这么实现的：</p> <div class="language- extra-class"><pre class="language-text"><code>// macro首选setImmediate 这个兼容性最差
+if (typeof setImmediate !== 'undefined' &amp;&amp; isNative(setImmediate)) {
+  macroTimerFunc = () =&gt; {
+    setImmediate(flushCallbacks)
+  }
+} else if (typeof MessageChannel !== 'undefined' &amp;&amp; (
+    isNative(MessageChannel) ||
+    // PhantomJS
+    MessageChannel.toString() === '[object MessageChannelConstructor]'
+  )) {
+  const channel = new MessageChannel()
+  const port = channel.port2
+  channel.port1.onmessage = flushCallbacks
+  macroTimerFunc = () =&gt; {
+    port.postMessage(1)
+  }
+} else {
+  // 兼容性最好的派发方式是setTimeout
+  macroTimerFunc = () =&gt; {
+    setTimeout(flushCallbacks, 0)
+  }
+}
+
+</code></pre></div><p>microTimeFunc() 是这么实现的：</p> <div class="language- extra-class"><pre class="language-text"><code>// 简单粗暴 不是ios全都给我去Promise 如果不兼容promise 那么你只能将就一下变成macro了
+if (typeof Promise !== 'undefined' &amp;&amp; isNative(Promise)) {
+  const p = Promise.resolve()
+  microTimerFunc = () =&gt; {
+    p.then(flushCallbacks)
+    // in problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // &quot;force&quot; the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) setTimeout(noop)
+  }
+} else {
+  // 如果无法派发micro，就退而求其次派发为macro
+  microTimerFunc = macroTimerFunc
+}
+
+</code></pre></div><p>我们注意到，无论是派发 macro 任务还是派发 micro 任务，派发的任务对象都是一个叫做 flushCallbacks 的东西，这个东西做了什么呢？</p> <p>flushCallbacks 源码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>function flushCallbacks () {
+  pending = false
+  // callbacks在nextick中出现过 它是任务数组（队列）
+  const copies = callbacks.slice(0)
+  callbacks.length = 0
+  // 将callbacks中的任务逐个取出执行
+  for (let i = 0; i &lt; copies.length; i++) {
+    copies[i]()
+  }
+}
+
+</code></pre></div><p>现在我们理清楚了：Vue 中每产生一个状态更新任务，它就会被塞进一个叫 callbacks 的数组（此处是任务队列的实现形式）中。这个任务队列在被丢进 micro 或 macro 队列之前，会先去检查当前是否有异步更新任务正在执行（即检查 pending 锁）。如果确认 pending 锁是开着的（false），就把它设置为锁上（true），然后对当前 callbacks 数组的任务进行派发（丢进 micro 或 macro 队列）和执行。设置 pending 锁的意义在于保证状态更新任务的有序进行，避免发生混乱。</p> <p>本小节我们从性能优化的角度出发，通过解析Vue源码，对异步更新这一高效的 DOM 优化手段有了感性的认知。同时帮助大家进一步熟悉了 micro 与 macro 在生产中的应用，加深了对 Event Loop 的理解。事实上，Vue 源码中还有许多值得称道的生产实践，其设计模式与编码细节都值得我们去细细品味，后面将针对设计模式和六大设计原则进一步学习和深析，并用新框架Toa进一步加深理解。</p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>至此，我们的 DOM 优化之路才走完了一半。</p> <p>以上我们都在讨论“如何减少 DOM 操作”的话题。这个话题比较宏观——DOM 操作也分很多种，它们带来的变化各不相同。有的操作只触发重绘，这时我们的性能损耗就小一些；有的操作会触发回流，这时我们更“肉疼”一些。那么如何理解回流与重绘，如何借助这些理解去提升页面渲染效率呢？</p> <p>结束了 JS 的征程，我们下面就走进 CSS 的世界一窥究竟。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/performance/6.html" class="prev">
+        对症下药—— DOM 优化原理与基本实践
+      </a></span> <span class="next"><a href="/blog/performance/8.html">
+        前言
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9a7aa7da.js" defer></script><script src="/assets/js/45.99a3547d.js" defer></script><script src="/assets/js/2.eeca2164.js" defer></script><script src="/assets/js/75.36c1f490.js" defer></script>
+  </body>
+</html>

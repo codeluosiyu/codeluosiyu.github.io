@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>帧动画函数库 | 程序员思语</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script src="/assets/js/autopush-baidu.js"></script>
+    <script src="/assets/js/autopush-360.js"></script>
+    <meta name="description" content="程序员思语个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.23ddddd1.css" as="style"><link rel="preload" href="/assets/js/app.9a7aa7da.js" as="script"><link rel="preload" href="/assets/js/45.99a3547d.js" as="script"><link rel="preload" href="/assets/js/2.eeca2164.js" as="script"><link rel="preload" href="/assets/js/17.77cc8084.js" as="script"><link rel="preload" href="/assets/js/7.2508a8d3.js" as="script"><link rel="preload" href="/assets/js/8.b697185c.js" as="script"><link rel="prefetch" href="/assets/js/10.efa00aa1.js"><link rel="prefetch" href="/assets/js/100.5d8f07f9.js"><link rel="prefetch" href="/assets/js/101.12bf9e38.js"><link rel="prefetch" href="/assets/js/102.6a9b4789.js"><link rel="prefetch" href="/assets/js/103.1896ac27.js"><link rel="prefetch" href="/assets/js/104.3eaf1060.js"><link rel="prefetch" href="/assets/js/105.04b7a748.js"><link rel="prefetch" href="/assets/js/106.473fefb1.js"><link rel="prefetch" href="/assets/js/107.4baf2120.js"><link rel="prefetch" href="/assets/js/108.785bd85a.js"><link rel="prefetch" href="/assets/js/109.26310598.js"><link rel="prefetch" href="/assets/js/11.266365e0.js"><link rel="prefetch" href="/assets/js/110.e627880f.js"><link rel="prefetch" href="/assets/js/111.28fcf7d6.js"><link rel="prefetch" href="/assets/js/112.6d47389e.js"><link rel="prefetch" href="/assets/js/113.fa1c8a31.js"><link rel="prefetch" href="/assets/js/114.204f9ff5.js"><link rel="prefetch" href="/assets/js/115.a7b15e52.js"><link rel="prefetch" href="/assets/js/116.b26fe275.js"><link rel="prefetch" href="/assets/js/117.09591d9c.js"><link rel="prefetch" href="/assets/js/118.f5ecbb2b.js"><link rel="prefetch" href="/assets/js/119.1beee065.js"><link rel="prefetch" href="/assets/js/12.88ccf36b.js"><link rel="prefetch" href="/assets/js/120.07d67d46.js"><link rel="prefetch" href="/assets/js/121.269a1379.js"><link rel="prefetch" href="/assets/js/122.534def5b.js"><link rel="prefetch" href="/assets/js/123.d3bbe913.js"><link rel="prefetch" href="/assets/js/124.7dd40d5a.js"><link rel="prefetch" href="/assets/js/125.6b746852.js"><link rel="prefetch" href="/assets/js/126.c3c8a927.js"><link rel="prefetch" href="/assets/js/127.c4deb22e.js"><link rel="prefetch" href="/assets/js/128.a10f8a5e.js"><link rel="prefetch" href="/assets/js/129.dc56eb4c.js"><link rel="prefetch" href="/assets/js/13.ea306a53.js"><link rel="prefetch" href="/assets/js/130.82df3f94.js"><link rel="prefetch" href="/assets/js/131.83659737.js"><link rel="prefetch" href="/assets/js/132.32263140.js"><link rel="prefetch" href="/assets/js/133.85756ff4.js"><link rel="prefetch" href="/assets/js/134.7c385905.js"><link rel="prefetch" href="/assets/js/135.ff9577ad.js"><link rel="prefetch" href="/assets/js/136.f6429275.js"><link rel="prefetch" href="/assets/js/137.fdde18fe.js"><link rel="prefetch" href="/assets/js/138.0665a9ca.js"><link rel="prefetch" href="/assets/js/139.d35f9735.js"><link rel="prefetch" href="/assets/js/14.d71709ea.js"><link rel="prefetch" href="/assets/js/140.c3eeac78.js"><link rel="prefetch" href="/assets/js/141.2e6c018c.js"><link rel="prefetch" href="/assets/js/142.d594d833.js"><link rel="prefetch" href="/assets/js/143.f0905229.js"><link rel="prefetch" href="/assets/js/144.b4fa47e6.js"><link rel="prefetch" href="/assets/js/145.cef2f196.js"><link rel="prefetch" href="/assets/js/146.6c5b5bd2.js"><link rel="prefetch" href="/assets/js/147.06d6415e.js"><link rel="prefetch" href="/assets/js/148.daa2aef4.js"><link rel="prefetch" href="/assets/js/149.a2eb9e99.js"><link rel="prefetch" href="/assets/js/15.c7ec1a1b.js"><link rel="prefetch" href="/assets/js/150.a45920b0.js"><link rel="prefetch" href="/assets/js/151.099829e8.js"><link rel="prefetch" href="/assets/js/152.fd1e487c.js"><link rel="prefetch" href="/assets/js/153.3fb2564f.js"><link rel="prefetch" href="/assets/js/154.77582580.js"><link rel="prefetch" href="/assets/js/155.ff966872.js"><link rel="prefetch" href="/assets/js/156.a75a12c1.js"><link rel="prefetch" href="/assets/js/157.714163f5.js"><link rel="prefetch" href="/assets/js/158.800faab3.js"><link rel="prefetch" href="/assets/js/159.53a68ffe.js"><link rel="prefetch" href="/assets/js/16.9cf439e7.js"><link rel="prefetch" href="/assets/js/160.f0de3abe.js"><link rel="prefetch" href="/assets/js/161.aef67afc.js"><link rel="prefetch" href="/assets/js/162.fc48976c.js"><link rel="prefetch" href="/assets/js/163.345bb4ad.js"><link rel="prefetch" href="/assets/js/164.726098dc.js"><link rel="prefetch" href="/assets/js/165.38f39905.js"><link rel="prefetch" href="/assets/js/166.675b91f5.js"><link rel="prefetch" href="/assets/js/167.b1bbc528.js"><link rel="prefetch" href="/assets/js/168.067cac4e.js"><link rel="prefetch" href="/assets/js/169.f8d1c083.js"><link rel="prefetch" href="/assets/js/170.3c89c3a8.js"><link rel="prefetch" href="/assets/js/171.6f8ef2dc.js"><link rel="prefetch" href="/assets/js/172.47997696.js"><link rel="prefetch" href="/assets/js/173.97369ef8.js"><link rel="prefetch" href="/assets/js/174.3f1d4ada.js"><link rel="prefetch" href="/assets/js/175.6f250d0d.js"><link rel="prefetch" href="/assets/js/176.c476908f.js"><link rel="prefetch" href="/assets/js/177.070eb013.js"><link rel="prefetch" href="/assets/js/178.cf43301a.js"><link rel="prefetch" href="/assets/js/179.6df69364.js"><link rel="prefetch" href="/assets/js/18.58e75a9e.js"><link rel="prefetch" href="/assets/js/19.486266d1.js"><link rel="prefetch" href="/assets/js/20.adc2d276.js"><link rel="prefetch" href="/assets/js/21.db506430.js"><link rel="prefetch" href="/assets/js/22.eb94b3b5.js"><link rel="prefetch" href="/assets/js/23.887f0c17.js"><link rel="prefetch" href="/assets/js/24.cd9b0cac.js"><link rel="prefetch" href="/assets/js/25.598ee441.js"><link rel="prefetch" href="/assets/js/26.a8a16beb.js"><link rel="prefetch" href="/assets/js/27.2d6352c7.js"><link rel="prefetch" href="/assets/js/28.4a83baa7.js"><link rel="prefetch" href="/assets/js/29.bc5ca9c8.js"><link rel="prefetch" href="/assets/js/3.7727965b.js"><link rel="prefetch" href="/assets/js/30.24b66fb8.js"><link rel="prefetch" href="/assets/js/31.f424143f.js"><link rel="prefetch" href="/assets/js/32.2bcffb44.js"><link rel="prefetch" href="/assets/js/33.a92f4dd5.js"><link rel="prefetch" href="/assets/js/34.993794f0.js"><link rel="prefetch" href="/assets/js/35.f4312cfe.js"><link rel="prefetch" href="/assets/js/36.22b33fc6.js"><link rel="prefetch" href="/assets/js/37.29bab3e2.js"><link rel="prefetch" href="/assets/js/38.db730eea.js"><link rel="prefetch" href="/assets/js/39.3b0af3d4.js"><link rel="prefetch" href="/assets/js/4.36c2b48f.js"><link rel="prefetch" href="/assets/js/40.cbcfa53a.js"><link rel="prefetch" href="/assets/js/41.cc547f2a.js"><link rel="prefetch" href="/assets/js/42.671c3c8c.js"><link rel="prefetch" href="/assets/js/43.38721000.js"><link rel="prefetch" href="/assets/js/44.45d5caed.js"><link rel="prefetch" href="/assets/js/46.a0eac4f4.js"><link rel="prefetch" href="/assets/js/47.bbfdd998.js"><link rel="prefetch" href="/assets/js/48.5cc655b0.js"><link rel="prefetch" href="/assets/js/49.96dfdb68.js"><link rel="prefetch" href="/assets/js/5.de06982c.js"><link rel="prefetch" href="/assets/js/50.922bd3f5.js"><link rel="prefetch" href="/assets/js/51.b31d0969.js"><link rel="prefetch" href="/assets/js/52.4a9e67a9.js"><link rel="prefetch" href="/assets/js/53.89329de3.js"><link rel="prefetch" href="/assets/js/54.4136713b.js"><link rel="prefetch" href="/assets/js/55.161344b7.js"><link rel="prefetch" href="/assets/js/56.7e8df4fb.js"><link rel="prefetch" href="/assets/js/57.708cd756.js"><link rel="prefetch" href="/assets/js/58.526d6afa.js"><link rel="prefetch" href="/assets/js/59.d27f25bc.js"><link rel="prefetch" href="/assets/js/6.7207dc06.js"><link rel="prefetch" href="/assets/js/60.9f4087f7.js"><link rel="prefetch" href="/assets/js/61.9bc26b94.js"><link rel="prefetch" href="/assets/js/62.ab950062.js"><link rel="prefetch" href="/assets/js/63.6bb2f66d.js"><link rel="prefetch" href="/assets/js/64.898b4311.js"><link rel="prefetch" href="/assets/js/65.553a7610.js"><link rel="prefetch" href="/assets/js/66.bbe58a33.js"><link rel="prefetch" href="/assets/js/67.69f09bcf.js"><link rel="prefetch" href="/assets/js/68.8c22fc8a.js"><link rel="prefetch" href="/assets/js/69.24b55957.js"><link rel="prefetch" href="/assets/js/70.a9562950.js"><link rel="prefetch" href="/assets/js/71.3f5184f9.js"><link rel="prefetch" href="/assets/js/72.ec17e723.js"><link rel="prefetch" href="/assets/js/73.e6987c1d.js"><link rel="prefetch" href="/assets/js/74.651351e4.js"><link rel="prefetch" href="/assets/js/75.36c1f490.js"><link rel="prefetch" href="/assets/js/76.b934f71e.js"><link rel="prefetch" href="/assets/js/77.cd96246d.js"><link rel="prefetch" href="/assets/js/78.cf23e0f3.js"><link rel="prefetch" href="/assets/js/79.63dc96a7.js"><link rel="prefetch" href="/assets/js/80.c9a8f488.js"><link rel="prefetch" href="/assets/js/81.fc0ab67f.js"><link rel="prefetch" href="/assets/js/82.71f7f69b.js"><link rel="prefetch" href="/assets/js/83.94560ac7.js"><link rel="prefetch" href="/assets/js/84.35e1adb8.js"><link rel="prefetch" href="/assets/js/85.3a8003dc.js"><link rel="prefetch" href="/assets/js/86.2f386e8f.js"><link rel="prefetch" href="/assets/js/87.f00181da.js"><link rel="prefetch" href="/assets/js/88.6c2f3b9b.js"><link rel="prefetch" href="/assets/js/89.6b50302a.js"><link rel="prefetch" href="/assets/js/9.f2e3638d.js"><link rel="prefetch" href="/assets/js/90.677b4ef5.js"><link rel="prefetch" href="/assets/js/91.e27f36b9.js"><link rel="prefetch" href="/assets/js/92.e4d83b31.js"><link rel="prefetch" href="/assets/js/93.f58fb5e9.js"><link rel="prefetch" href="/assets/js/94.72807ad9.js"><link rel="prefetch" href="/assets/js/95.3f021f14.js"><link rel="prefetch" href="/assets/js/96.66b26129.js"><link rel="prefetch" href="/assets/js/97.3508edbe.js"><link rel="prefetch" href="/assets/js/98.681b1648.js"><link rel="prefetch" href="/assets/js/99.eda8b591.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23ddddd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员思语</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>动画库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/animation/lodash/start.html" class="sidebar-link">帧动画函数库start</a></li><li><a href="/animation/lodash/cli.html" class="sidebar-link">帧动画函数库cli</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>动画组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/animation/component/start.html" class="sidebar-link">帧动画函数库</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>作品集合</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/animation/example/start.html" class="sidebar-link">No.1 小程序帧动画组件</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="帧动画函数库"><a href="#帧动画函数库" class="header-anchor">#</a> 帧动画函数库</h2> <h1 id="timeline"><a href="#timeline" class="header-anchor">#</a> <div style="display:inline-block;" data-v-2fb52f6a><img src="" alt data-v-2fb52f6a></div> timeline</h1> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// timeline.js</span>
+<span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> <span class="token constant">DEFAULT_INTERVAL</span> <span class="token operator">=</span> <span class="token number">1000</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+<span class="token comment">//初始化状态</span>
+<span class="token keyword">var</span> <span class="token constant">STATE_INITIAL</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment">//开始状态</span>
+<span class="token keyword">var</span> <span class="token constant">STATE_START</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">//停止状态</span>
+<span class="token keyword">var</span> <span class="token constant">STATE_STOP</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Timline时间轴类
+ * @constructor
+ */</span>
+<span class="token keyword">function</span> <span class="token function">Timeline</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>animationHandler <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_INITIAL</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 时间轴上每一次回调执行的函数
+ * @param time 从动画开始到当前执行的时间
+ */</span>
+<span class="token class-name">Timeline</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">onenterframe</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 动画开始
+ * @param interval 每一次回调的间隔时间
+ */</span>
+<span class="token class-name">Timeline</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">start</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">interval</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">STATE_START</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_START</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">this</span><span class="token punctuation">.</span>interval <span class="token operator">=</span> interval <span class="token operator">||</span> <span class="token constant">DEFAULT_INTERVAL</span><span class="token punctuation">;</span>
+	<span class="token function">startTimeline</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 重新开始动画
+ */</span>
+<span class="token class-name">Timeline</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">restart</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">STATE_START</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>dur <span class="token operator">||</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>interval<span class="token punctuation">)</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_START</span><span class="token punctuation">;</span>
+
+	<span class="token comment">//无缝连接停止动画的状态</span>
+	<span class="token function">startTimeline</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 动画停止
+ */</span>
+<span class="token class-name">Timeline</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">stop</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">!==</span> <span class="token constant">STATE_START</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_STOP</span><span class="token punctuation">;</span>
+
+	<span class="token comment">//如果动画开始过，则记录动画从开始到当前所经历的时间</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>startTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>dur <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startTime<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">cancelAnimationFrame</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>animationHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 时间轴动画启动函数
+ * @param timeline 时间轴实例
+ * @param startTime 动画开始时间戳
+ */</span>
+<span class="token keyword">function</span> <span class="token function">startTimeline</span><span class="token punctuation">(</span><span class="token parameter">timeline<span class="token punctuation">,</span> startTime</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//记录上一次回调的时间戳</span>
+	<span class="token keyword">var</span> lastTick <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	timeline<span class="token punctuation">.</span>startTime <span class="token operator">=</span> startTime<span class="token punctuation">;</span>
+	nextTick<span class="token punctuation">.</span>interval <span class="token operator">=</span> timeline<span class="token punctuation">.</span>interval<span class="token punctuation">;</span>
+	<span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * 每一帧执行的函数
+	 */</span>
+	<span class="token keyword">function</span> <span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		timeline<span class="token punctuation">.</span>animationHandler <span class="token operator">=</span> <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>nextTick<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">//如果当前时间与上一次回调的时间戳相差大于我们设置的间隔时间，表示可以执行一次回调函数。</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> lastTick <span class="token operator">&gt;=</span> timeline<span class="token punctuation">.</span>interval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			timeline<span class="token punctuation">.</span><span class="token function">onenterframe</span><span class="token punctuation">(</span>now <span class="token operator">-</span> startTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			lastTick <span class="token operator">=</span> now<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * raf
+ */</span>
+<span class="token keyword">var</span> requestAnimationFrame <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> window<span class="token punctuation">.</span>requestAnimationFrame <span class="token operator">||</span>
+		window<span class="token punctuation">.</span>webkitRequestAnimationFrame <span class="token operator">||</span>
+		window<span class="token punctuation">.</span>mozRequestAnimationFrame <span class="token operator">||</span>
+		window<span class="token punctuation">.</span>oRequestAnimationFrame <span class="token operator">||</span>
+			<span class="token comment">//所有都不支持，用setTimeout兼容</span>
+		<span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> <span class="token punctuation">(</span>callback<span class="token punctuation">.</span>interval <span class="token operator">||</span> <span class="token constant">DEFAULT_INTERVAL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// make interval as precise as possible.</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * cancel raf
+ */</span>
+<span class="token keyword">var</span> cancelAnimationFrame <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> window<span class="token punctuation">.</span>cancelAnimationFrame <span class="token operator">||</span>
+		window<span class="token punctuation">.</span>webkitCancelAnimationFrame <span class="token operator">||</span>
+		window<span class="token punctuation">.</span>mozCancelAnimationFrame <span class="token operator">||</span>
+		window<span class="token punctuation">.</span>oCancelAnimationFrame <span class="token operator">||</span>
+		<span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			window<span class="token punctuation">.</span><span class="token function">clearTimeout</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Timeline<span class="token punctuation">;</span>
+</code></pre></div><h1 id="animation"><a href="#animation" class="header-anchor">#</a> <div style="display:inline-block;" data-v-2fb52f6a><img src="" alt data-v-2fb52f6a></div> animation</h1> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Timeline <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./timeline'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> loadImage <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./imageloader'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//初始化状态</span>
+<span class="token keyword">var</span> <span class="token constant">STATE_INITIAL</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment">//开始状态</span>
+<span class="token keyword">var</span> <span class="token constant">STATE_START</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">//停止状态</span>
+<span class="token keyword">var</span> <span class="token constant">STATE_STOP</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">//同步任务</span>
+<span class="token keyword">var</span> <span class="token constant">TASK_SYNC</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment">//异步任务</span>
+<span class="token keyword">var</span> <span class="token constant">TASK_ASYNC</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">/**
+ * 简单的函数封装，执行callback
+ * @param callback 执行的函数
+ */</span>
+<span class="token keyword">function</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	callback <span class="token operator">&amp;&amp;</span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 帧动画库类
+ * @constructor
+ */</span>
+<span class="token keyword">function</span> <span class="token function">Animation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Timeline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_INITIAL</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 添加一个同步任务，预加载图片
+ * @param imglist 图片数组
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">loadImage</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">imglist</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">var</span> <span class="token function-variable function">taskFn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">loadImage</span><span class="token punctuation">(</span>imglist<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> type <span class="token operator">=</span> <span class="token constant">TASK_SYNC</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_add</span><span class="token punctuation">(</span>taskFn<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 添加一个异步定时任务，通过定时改变图片背景位置，实现帧动画
+ * @param ele dom对象
+ * @param positions 背景位置数组
+ * @param imageUrl 图片地址
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">changePosition</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ele<span class="token punctuation">,</span> positions<span class="token punctuation">,</span> imageUrl</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> len <span class="token operator">=</span> positions<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> taskFn<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> type<span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">var</span> me <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+		<span class="token function-variable function">taskFn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">next<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//如果指定图片，则设置dom对象的背景图片地址</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>imageUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				ele<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundImage <span class="token operator">=</span> <span class="token string">'url('</span> <span class="token operator">+</span> imageUrl <span class="token operator">+</span> <span class="token string">')'</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token comment">//获得当前背景图片位置索引</span>
+			<span class="token keyword">var</span> index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>time <span class="token operator">/</span> me<span class="token punctuation">.</span>interval <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">var</span> position <span class="token operator">=</span> positions<span class="token punctuation">[</span>index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">//改变dom对象的背景图片位置</span>
+			ele<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundPosition <span class="token operator">=</span> position<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'px '</span> <span class="token operator">+</span> position<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+			<span class="token comment">//当前任务执行完毕</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">===</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		type <span class="token operator">=</span> <span class="token constant">TASK_ASYNC</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		taskFn <span class="token operator">=</span> next<span class="token punctuation">;</span>
+		type <span class="token operator">=</span> <span class="token constant">TASK_SYNC</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_add</span><span class="token punctuation">(</span>taskFn<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 添加一个异步定时任务，通过定时改变背景图片地址，实现帧动画
+ * @param ele dom(Image对象)
+ * @param imglist 图片地址数组
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">changeSrc</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ele<span class="token punctuation">,</span> imglist</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> len <span class="token operator">=</span> imglist<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> taskFn<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> type<span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">var</span> me <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+		<span class="token function-variable function">taskFn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">next<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//获得当前的图片索引</span>
+			<span class="token keyword">var</span> index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>time <span class="token operator">/</span> me<span class="token punctuation">.</span>interval <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">//改变image对象的图片地址</span>
+			ele<span class="token punctuation">.</span>src <span class="token operator">=</span> imglist<span class="token punctuation">[</span>index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token comment">//当前任务执行完毕</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">===</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		type <span class="token operator">=</span> <span class="token constant">TASK_ASYNC</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		taskFn <span class="token operator">=</span> next<span class="token punctuation">;</span>
+		type <span class="token operator">=</span> <span class="token constant">TASK_SYNC</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_add</span><span class="token punctuation">(</span>taskFn<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 高级用法，添加一个异步定时执行的任务，
+ * 该任务自定义动画每帧执行的任务函数
+ * @param taskFn 每帧执行的任务函数
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">enterFrame</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">taskFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_add</span><span class="token punctuation">(</span>taskFn<span class="token punctuation">,</span> <span class="token constant">TASK_ASYNC</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 添加一个同步任务，可在上一个任务完成执行回调函数
+ * @param callback 回调函数
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> <span class="token function-variable function">taskFn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> type <span class="token operator">=</span> <span class="token constant">TASK_SYNC</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_add</span><span class="token punctuation">(</span>taskFn<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 开始执行任务
+ * @param interval 异步定时任务执行的间隔
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">start</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">interval</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//如果任务已经开始，则返回</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">STATE_START</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token comment">//如果任务链中没有任务，则返回</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_START</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">this</span><span class="token punctuation">.</span>interval <span class="token operator">=</span> interval<span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_runTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 添加一个同步任务，该任务就是回退到上一个任务中，
+ * 实现重复上一个任务的效果，可定义重复的次数。
+ * @param times 重复次数
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">repeat</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">times</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> me <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> <span class="token function-variable function">taskFn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> times <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//无限回退到上一个任务</span>
+			me<span class="token punctuation">.</span>index<span class="token operator">--</span><span class="token punctuation">;</span>
+			me<span class="token punctuation">.</span><span class="token function">_runTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">return</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>times<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			times<span class="token operator">--</span><span class="token punctuation">;</span>
+			<span class="token comment">//回退到上一个任务</span>
+			me<span class="token punctuation">.</span>index<span class="token operator">--</span><span class="token punctuation">;</span>
+			me<span class="token punctuation">.</span><span class="token function">_runTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token comment">//达到重复执行次数，则跳转到下一个任务</span>
+			<span class="token keyword">var</span> task <span class="token operator">=</span> me<span class="token punctuation">.</span>taskQueue<span class="token punctuation">[</span>me<span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			me<span class="token punctuation">.</span><span class="token function">_next</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> type <span class="token operator">=</span> <span class="token constant">TASK_SYNC</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_add</span><span class="token punctuation">(</span>taskFn<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 添加一个同步任务，该任务就是无线循环上一次任务
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">repeatForever</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 设置当前任务结束后下一个任务开始前的等待时间
+ * @param time 等待的时长
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">wait</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>wait <span class="token operator">=</span> time<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 暂停当前执行的异步定时任务
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">STATE_START</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_STOP</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>timeline<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 重新开始执行当前异步定时任务
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">restart</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">STATE_STOP</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_START</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>timeline<span class="token punctuation">.</span><span class="token function">restart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 释放资源
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">dispose</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">!==</span> <span class="token constant">STATE_INITIAL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATE_INITIAL</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>timeline<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>timeline <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 添加一个任务到任务队列中
+ * @param taskFn 任务方法
+ * @param type 任务类型
+ * @returns {Animation}
+ * @private
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">taskFn<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		taskFn<span class="token operator">:</span> taskFn<span class="token punctuation">,</span>
+		type<span class="token operator">:</span> type
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 执行任务
+ * @private
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_runTask</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">!==</span> <span class="token constant">STATE_START</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token comment">//如果任务链任务执行完则释放资源</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//获得任务链上的一个任务</span>
+	<span class="token keyword">var</span> task <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskQueue<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>task<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token constant">TASK_SYNC</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_syncTask</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_asyncTask</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 同步任务
+ * @param task 执行任务的函数
+ * @private
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_syncTask</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">task</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> me <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> <span class="token function-variable function">next</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">//切换到下一个任务</span>
+		me<span class="token punctuation">.</span><span class="token function">_next</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> taskFn <span class="token operator">=</span> task<span class="token punctuation">.</span>taskFn<span class="token punctuation">;</span>
+	<span class="token function">taskFn</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 异步任务
+ * @param task 执行异步的函数
+ * @private
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_asyncTask</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">task</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> me <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token comment">//定义每一帧执行的回调函数</span>
+	<span class="token keyword">var</span> <span class="token function-variable function">enterframe</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">var</span> taskFn <span class="token operator">=</span> task<span class="token punctuation">.</span>taskFn<span class="token punctuation">;</span>
+		<span class="token keyword">var</span> <span class="token function-variable function">next</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//停止执行当前任务</span>
+			me<span class="token punctuation">.</span>timeline<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">//执行下一个任务</span>
+			me<span class="token punctuation">.</span><span class="token function">_next</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token function">taskFn</span><span class="token punctuation">(</span>next<span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">this</span><span class="token punctuation">.</span>timeline<span class="token punctuation">.</span>onenterframe <span class="token operator">=</span> enterframe<span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>timeline<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>interval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 切换到下一个任务，如果当前任务需要等待，则延时执行
+ * @param task 下一个任务
+ * @private
+ */</span>
+<span class="token class-name">Animation</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_next</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">task</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> me <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token operator">++</span><span class="token punctuation">;</span>
+	task<span class="token punctuation">.</span>wait <span class="token operator">?</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		me<span class="token punctuation">.</span><span class="token function">_runTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> task<span class="token punctuation">.</span>wait<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_runTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">function</span> <span class="token function">createAnimation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Animation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+createAnimation<span class="token punctuation">.</span>version <span class="token operator">=</span> __VERSION__<span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> createAnimation<span class="token punctuation">;</span>
+</code></pre></div><h1 id="imageloader"><a href="#imageloader" class="header-anchor">#</a> <div style="display:inline-block;" data-v-2fb52f6a><img src="" alt data-v-2fb52f6a></div> imageloader</h1> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> __id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 动态创建id
+ * @returns {number}
+ */</span>
+<span class="token keyword">function</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">++</span>__id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 预加载图片函数
+ * @param images 加载的图片数组或对象
+ * @param callback 全部图片加载完毕后调用的回调函数
+ * @param timeout 加载超时的时长
+ */</span>
+<span class="token keyword">function</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token parameter">images<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> timeout</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//加载完成图片的计数器</span>
+	<span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token comment">//全部图片成功加载完图片的标志位</span>
+	<span class="token keyword">var</span> success <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token comment">//超时timer的id</span>
+	<span class="token keyword">var</span> timeoutId <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token comment">//是否加载超时的标志位</span>
+	<span class="token keyword">var</span> isTimeout <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token comment">//对图片数组（或对象）进行遍历</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> key <span class="token keyword">in</span> images<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">//过滤掉prototype的属性</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>images<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">continue</span><span class="token punctuation">;</span>
+		<span class="token comment">//获得每个图片元素</span>
+		<span class="token comment">//期望格式是个object： {src:xxx}</span>
+		<span class="token keyword">var</span> item <span class="token operator">=</span> images<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// 如果item是个字符串，则构造object</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> item <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			item <span class="token operator">=</span> images<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+				src<span class="token operator">:</span> item
+			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token comment">//如果格式不满足期望，则丢弃此条数据进行下一次遍历</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item <span class="token operator">||</span> <span class="token operator">!</span>item<span class="token punctuation">.</span>src<span class="token punctuation">)</span>
+			<span class="token keyword">continue</span><span class="token punctuation">;</span>
+
+		<span class="token comment">//计数+1</span>
+		count<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token comment">//设置图片元素的id</span>
+		item<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">&quot;__img_&quot;</span> <span class="token operator">+</span> key <span class="token operator">+</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//设置图片元素的img，是一个Image对象</span>
+		item<span class="token punctuation">.</span>img <span class="token operator">=</span> window<span class="token punctuation">[</span>item<span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token function">doLoad</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//遍历完成如果计数为0，则直接调用</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">callback</span><span class="token punctuation">(</span>success<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//如果设置了加载时长，则设置超时函数计时器</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		timeoutId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>onTimeout<span class="token punctuation">,</span> timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/**
+	 * 真正进行图片加载的函数
+	 * @param item 图片元素对象
+	 */</span>
+	<span class="token keyword">function</span> <span class="token function">doLoad</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		item<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">&quot;loading&quot;</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">var</span> img <span class="token operator">=</span> item<span class="token punctuation">.</span>img<span class="token punctuation">;</span>
+		<span class="token comment">//定义图片加载成功的回调函数</span>
+		img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//如果每张图片都成功才算成功</span>
+			success <span class="token operator">=</span> success <span class="token operator">&amp;&amp;</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+			item<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">&quot;loaded&quot;</span><span class="token punctuation">;</span>
+			<span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		img<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//若有一张图片加载失败，则为失败</span>
+			success <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+			item<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">&quot;error&quot;</span><span class="token punctuation">;</span>
+			<span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token comment">//发起一个http(s)请求加载图片</span>
+		img<span class="token punctuation">.</span>src <span class="token operator">=</span> item<span class="token punctuation">.</span>src<span class="token punctuation">;</span>
+
+		<span class="token comment">/**
+		 * 每张图片加载完成的回调函数
+		 */</span>
+		<span class="token keyword">function</span> <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">//事件清理</span>
+			img<span class="token punctuation">.</span>onload <span class="token operator">=</span> img<span class="token punctuation">.</span>onerror <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+			<span class="token keyword">try</span> <span class="token punctuation">{</span>
+				<span class="token comment">//删除window上注册的属性</span>
+				<span class="token keyword">delete</span> window<span class="token punctuation">[</span>item<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+			<span class="token punctuation">}</span>
+			<span class="token comment">//每张图片加载完成，计数器减一，当所有图片加载完毕且没有超时的情况下，</span>
+			<span class="token comment">//清除超时计时器，且执行回调函数</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">--</span>count <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isTimeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeoutId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token function">callback</span><span class="token punctuation">(</span>success<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/**
+	 * 超时函数
+	 */</span>
+	<span class="token keyword">function</span> <span class="token function">onTimeout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		isTimeout <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+		<span class="token function">callback</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> loadImage<span class="token punctuation">;</span>
+
+</code></pre></div><div data-v-244f5c7a><ul class="rightMenuWrapper" data-v-244f5c7a></ul></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9a7aa7da.js" defer></script><script src="/assets/js/45.99a3547d.js" defer></script><script src="/assets/js/2.eeca2164.js" defer></script><script src="/assets/js/17.77cc8084.js" defer></script><script src="/assets/js/7.2508a8d3.js" defer></script><script src="/assets/js/8.b697185c.js" defer></script>
+  </body>
+</html>

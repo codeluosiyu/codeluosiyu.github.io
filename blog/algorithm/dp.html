@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>贪心算法的局限性 | 程序员思语</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script src="/assets/js/autopush-baidu.js"></script>
+    <script src="/assets/js/autopush-360.js"></script>
+    <meta name="description" content="程序员思语个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.23ddddd1.css" as="style"><link rel="preload" href="/assets/js/app.9a7aa7da.js" as="script"><link rel="preload" href="/assets/js/45.99a3547d.js" as="script"><link rel="preload" href="/assets/js/2.eeca2164.js" as="script"><link rel="preload" href="/assets/js/56.7e8df4fb.js" as="script"><link rel="prefetch" href="/assets/js/10.efa00aa1.js"><link rel="prefetch" href="/assets/js/100.5d8f07f9.js"><link rel="prefetch" href="/assets/js/101.12bf9e38.js"><link rel="prefetch" href="/assets/js/102.6a9b4789.js"><link rel="prefetch" href="/assets/js/103.1896ac27.js"><link rel="prefetch" href="/assets/js/104.3eaf1060.js"><link rel="prefetch" href="/assets/js/105.04b7a748.js"><link rel="prefetch" href="/assets/js/106.473fefb1.js"><link rel="prefetch" href="/assets/js/107.4baf2120.js"><link rel="prefetch" href="/assets/js/108.785bd85a.js"><link rel="prefetch" href="/assets/js/109.26310598.js"><link rel="prefetch" href="/assets/js/11.266365e0.js"><link rel="prefetch" href="/assets/js/110.e627880f.js"><link rel="prefetch" href="/assets/js/111.28fcf7d6.js"><link rel="prefetch" href="/assets/js/112.6d47389e.js"><link rel="prefetch" href="/assets/js/113.fa1c8a31.js"><link rel="prefetch" href="/assets/js/114.204f9ff5.js"><link rel="prefetch" href="/assets/js/115.a7b15e52.js"><link rel="prefetch" href="/assets/js/116.b26fe275.js"><link rel="prefetch" href="/assets/js/117.09591d9c.js"><link rel="prefetch" href="/assets/js/118.f5ecbb2b.js"><link rel="prefetch" href="/assets/js/119.1beee065.js"><link rel="prefetch" href="/assets/js/12.88ccf36b.js"><link rel="prefetch" href="/assets/js/120.07d67d46.js"><link rel="prefetch" href="/assets/js/121.269a1379.js"><link rel="prefetch" href="/assets/js/122.534def5b.js"><link rel="prefetch" href="/assets/js/123.d3bbe913.js"><link rel="prefetch" href="/assets/js/124.7dd40d5a.js"><link rel="prefetch" href="/assets/js/125.6b746852.js"><link rel="prefetch" href="/assets/js/126.c3c8a927.js"><link rel="prefetch" href="/assets/js/127.c4deb22e.js"><link rel="prefetch" href="/assets/js/128.a10f8a5e.js"><link rel="prefetch" href="/assets/js/129.dc56eb4c.js"><link rel="prefetch" href="/assets/js/13.ea306a53.js"><link rel="prefetch" href="/assets/js/130.82df3f94.js"><link rel="prefetch" href="/assets/js/131.83659737.js"><link rel="prefetch" href="/assets/js/132.32263140.js"><link rel="prefetch" href="/assets/js/133.85756ff4.js"><link rel="prefetch" href="/assets/js/134.7c385905.js"><link rel="prefetch" href="/assets/js/135.ff9577ad.js"><link rel="prefetch" href="/assets/js/136.f6429275.js"><link rel="prefetch" href="/assets/js/137.fdde18fe.js"><link rel="prefetch" href="/assets/js/138.0665a9ca.js"><link rel="prefetch" href="/assets/js/139.d35f9735.js"><link rel="prefetch" href="/assets/js/14.d71709ea.js"><link rel="prefetch" href="/assets/js/140.c3eeac78.js"><link rel="prefetch" href="/assets/js/141.2e6c018c.js"><link rel="prefetch" href="/assets/js/142.d594d833.js"><link rel="prefetch" href="/assets/js/143.f0905229.js"><link rel="prefetch" href="/assets/js/144.b4fa47e6.js"><link rel="prefetch" href="/assets/js/145.cef2f196.js"><link rel="prefetch" href="/assets/js/146.6c5b5bd2.js"><link rel="prefetch" href="/assets/js/147.06d6415e.js"><link rel="prefetch" href="/assets/js/148.daa2aef4.js"><link rel="prefetch" href="/assets/js/149.a2eb9e99.js"><link rel="prefetch" href="/assets/js/15.c7ec1a1b.js"><link rel="prefetch" href="/assets/js/150.a45920b0.js"><link rel="prefetch" href="/assets/js/151.099829e8.js"><link rel="prefetch" href="/assets/js/152.fd1e487c.js"><link rel="prefetch" href="/assets/js/153.3fb2564f.js"><link rel="prefetch" href="/assets/js/154.77582580.js"><link rel="prefetch" href="/assets/js/155.ff966872.js"><link rel="prefetch" href="/assets/js/156.a75a12c1.js"><link rel="prefetch" href="/assets/js/157.714163f5.js"><link rel="prefetch" href="/assets/js/158.800faab3.js"><link rel="prefetch" href="/assets/js/159.53a68ffe.js"><link rel="prefetch" href="/assets/js/16.9cf439e7.js"><link rel="prefetch" href="/assets/js/160.f0de3abe.js"><link rel="prefetch" href="/assets/js/161.aef67afc.js"><link rel="prefetch" href="/assets/js/162.fc48976c.js"><link rel="prefetch" href="/assets/js/163.345bb4ad.js"><link rel="prefetch" href="/assets/js/164.726098dc.js"><link rel="prefetch" href="/assets/js/165.38f39905.js"><link rel="prefetch" href="/assets/js/166.675b91f5.js"><link rel="prefetch" href="/assets/js/167.b1bbc528.js"><link rel="prefetch" href="/assets/js/168.067cac4e.js"><link rel="prefetch" href="/assets/js/169.f8d1c083.js"><link rel="prefetch" href="/assets/js/17.77cc8084.js"><link rel="prefetch" href="/assets/js/170.3c89c3a8.js"><link rel="prefetch" href="/assets/js/171.6f8ef2dc.js"><link rel="prefetch" href="/assets/js/172.47997696.js"><link rel="prefetch" href="/assets/js/173.97369ef8.js"><link rel="prefetch" href="/assets/js/174.3f1d4ada.js"><link rel="prefetch" href="/assets/js/175.6f250d0d.js"><link rel="prefetch" href="/assets/js/176.c476908f.js"><link rel="prefetch" href="/assets/js/177.070eb013.js"><link rel="prefetch" href="/assets/js/178.cf43301a.js"><link rel="prefetch" href="/assets/js/179.6df69364.js"><link rel="prefetch" href="/assets/js/18.58e75a9e.js"><link rel="prefetch" href="/assets/js/19.486266d1.js"><link rel="prefetch" href="/assets/js/20.adc2d276.js"><link rel="prefetch" href="/assets/js/21.db506430.js"><link rel="prefetch" href="/assets/js/22.eb94b3b5.js"><link rel="prefetch" href="/assets/js/23.887f0c17.js"><link rel="prefetch" href="/assets/js/24.cd9b0cac.js"><link rel="prefetch" href="/assets/js/25.598ee441.js"><link rel="prefetch" href="/assets/js/26.a8a16beb.js"><link rel="prefetch" href="/assets/js/27.2d6352c7.js"><link rel="prefetch" href="/assets/js/28.4a83baa7.js"><link rel="prefetch" href="/assets/js/29.bc5ca9c8.js"><link rel="prefetch" href="/assets/js/3.7727965b.js"><link rel="prefetch" href="/assets/js/30.24b66fb8.js"><link rel="prefetch" href="/assets/js/31.f424143f.js"><link rel="prefetch" href="/assets/js/32.2bcffb44.js"><link rel="prefetch" href="/assets/js/33.a92f4dd5.js"><link rel="prefetch" href="/assets/js/34.993794f0.js"><link rel="prefetch" href="/assets/js/35.f4312cfe.js"><link rel="prefetch" href="/assets/js/36.22b33fc6.js"><link rel="prefetch" href="/assets/js/37.29bab3e2.js"><link rel="prefetch" href="/assets/js/38.db730eea.js"><link rel="prefetch" href="/assets/js/39.3b0af3d4.js"><link rel="prefetch" href="/assets/js/4.36c2b48f.js"><link rel="prefetch" href="/assets/js/40.cbcfa53a.js"><link rel="prefetch" href="/assets/js/41.cc547f2a.js"><link rel="prefetch" href="/assets/js/42.671c3c8c.js"><link rel="prefetch" href="/assets/js/43.38721000.js"><link rel="prefetch" href="/assets/js/44.45d5caed.js"><link rel="prefetch" href="/assets/js/46.a0eac4f4.js"><link rel="prefetch" href="/assets/js/47.bbfdd998.js"><link rel="prefetch" href="/assets/js/48.5cc655b0.js"><link rel="prefetch" href="/assets/js/49.96dfdb68.js"><link rel="prefetch" href="/assets/js/5.de06982c.js"><link rel="prefetch" href="/assets/js/50.922bd3f5.js"><link rel="prefetch" href="/assets/js/51.b31d0969.js"><link rel="prefetch" href="/assets/js/52.4a9e67a9.js"><link rel="prefetch" href="/assets/js/53.89329de3.js"><link rel="prefetch" href="/assets/js/54.4136713b.js"><link rel="prefetch" href="/assets/js/55.161344b7.js"><link rel="prefetch" href="/assets/js/57.708cd756.js"><link rel="prefetch" href="/assets/js/58.526d6afa.js"><link rel="prefetch" href="/assets/js/59.d27f25bc.js"><link rel="prefetch" href="/assets/js/6.7207dc06.js"><link rel="prefetch" href="/assets/js/60.9f4087f7.js"><link rel="prefetch" href="/assets/js/61.9bc26b94.js"><link rel="prefetch" href="/assets/js/62.ab950062.js"><link rel="prefetch" href="/assets/js/63.6bb2f66d.js"><link rel="prefetch" href="/assets/js/64.898b4311.js"><link rel="prefetch" href="/assets/js/65.553a7610.js"><link rel="prefetch" href="/assets/js/66.bbe58a33.js"><link rel="prefetch" href="/assets/js/67.69f09bcf.js"><link rel="prefetch" href="/assets/js/68.8c22fc8a.js"><link rel="prefetch" href="/assets/js/69.24b55957.js"><link rel="prefetch" href="/assets/js/7.2508a8d3.js"><link rel="prefetch" href="/assets/js/70.a9562950.js"><link rel="prefetch" href="/assets/js/71.3f5184f9.js"><link rel="prefetch" href="/assets/js/72.ec17e723.js"><link rel="prefetch" href="/assets/js/73.e6987c1d.js"><link rel="prefetch" href="/assets/js/74.651351e4.js"><link rel="prefetch" href="/assets/js/75.36c1f490.js"><link rel="prefetch" href="/assets/js/76.b934f71e.js"><link rel="prefetch" href="/assets/js/77.cd96246d.js"><link rel="prefetch" href="/assets/js/78.cf23e0f3.js"><link rel="prefetch" href="/assets/js/79.63dc96a7.js"><link rel="prefetch" href="/assets/js/8.b697185c.js"><link rel="prefetch" href="/assets/js/80.c9a8f488.js"><link rel="prefetch" href="/assets/js/81.fc0ab67f.js"><link rel="prefetch" href="/assets/js/82.71f7f69b.js"><link rel="prefetch" href="/assets/js/83.94560ac7.js"><link rel="prefetch" href="/assets/js/84.35e1adb8.js"><link rel="prefetch" href="/assets/js/85.3a8003dc.js"><link rel="prefetch" href="/assets/js/86.2f386e8f.js"><link rel="prefetch" href="/assets/js/87.f00181da.js"><link rel="prefetch" href="/assets/js/88.6c2f3b9b.js"><link rel="prefetch" href="/assets/js/89.6b50302a.js"><link rel="prefetch" href="/assets/js/9.f2e3638d.js"><link rel="prefetch" href="/assets/js/90.677b4ef5.js"><link rel="prefetch" href="/assets/js/91.e27f36b9.js"><link rel="prefetch" href="/assets/js/92.e4d83b31.js"><link rel="prefetch" href="/assets/js/93.f58fb5e9.js"><link rel="prefetch" href="/assets/js/94.72807ad9.js"><link rel="prefetch" href="/assets/js/95.3f021f14.js"><link rel="prefetch" href="/assets/js/96.66b26129.js"><link rel="prefetch" href="/assets/js/97.3508edbe.js"><link rel="prefetch" href="/assets/js/98.681b1648.js"><link rel="prefetch" href="/assets/js/99.eda8b591.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23ddddd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员思语</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日常博客</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>算法训练营</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/algorithm/greedy.html" class="sidebar-link">贪心算法</a></li><li><a href="/blog/algorithm/dp.html" aria-current="page" class="active sidebar-link">贪心算法的局限性</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java训练营</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="贪心算法的局限性"><a href="#贪心算法的局限性" class="header-anchor">#</a> 贪心算法的局限性</h1> <p>任何算法都有它的局限性，贪心算法也如此，那么贪心算法能解决哪些问题呢？</p> <p>问题：给定 n 种不同面值的硬币，分别记为 c[0], c[1], c[2], … c[n]，同时还有一个总金额
+k，编写一个函数计算出最少需要几枚硬币凑出这个金额 k？每种硬币的个数不限，且如果
+没有任何一种硬币组合能组成总金额时，返回 -1。</p> <p>题目中有一个醒目的提示词，那就是“最少”。嗯，看起来这是一个求最值的问题，其实
+也好理解，如果题目不在这里设定这一条件，那么所求结果就不唯一了。</p> <p>举个简单的例子，按照示例 1 的题设，有三种不同面值的硬币，分别为 c1=1, c2=2,
+c3=5，在没有“最少”这一前提条件下你能罗列出几种不同的答案？我在这里随意列出几
+个：</p> <p>解1：输出：5，因为 5 + 2 + 2 + 2 + 1 = 12。
+解2：输出：6，因为 2 + 2 + 2 + 2 + 2 + 2 = 12。
+解3：输出：12，因为 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 12。</p> <p>所以，这是一个求最值的问题。那么求最值的核心问题是什么呢？嗯，无非就是穷举，显
+然，就是把所有可能的凑硬币方法都穷举出来，然后找找看最少需要多少枚硬币，那么最
+少的凑法，就是这道题目的答案。</p> <p>在面试中，一般来说穷举从来都不是一个好方法。除非你要的结果就是所有的不同组合，
+而不是一个最值。但即便是求所有的不同组合，在计算的过程中也仍然会出现重复计算的
+问题，我们将这种现象称之为重叠子问题。
+请你记住这个关键概念，它是动态规划当中的一个重要概念。但现在你只需要知道所谓重
+叠子问题就是：我们在罗列所有可能答案的过程中，可能存在重复计算的情况。我会在后
+续课程中与你深入探讨这个概念。</p> <p>贪心算法</p> <p>所谓贪心算法，就是指它的每一步计算作出的都是在当前看起来最好的选择，也就是说它
+所作出的选择只是在某种意义上的局部最优选择，并不从整体最优考虑。在这里，我把这
+两种选择的思路称作局部最优解和整体最优解。</p> <p>因此，我们可以得到贪心算法的基本思路：</p> <p>1.根据问题来建立数学模型，一般面试题会定义一个简单模型；</p> <p>2.把待求解问题划分成若干个子问题，对每个子问题进行求解，得到子问题的局部最优
+解；</p> <p>3.把子问题的局部最优解进行合并，得到最后基于局部最优解的一个解，即原问题的答
+案。</p> <p>解题思路
+既然这道题问的是最少需要几枚硬币凑出金额 k，那么是否可以尝试使用贪心的思想来解
+这个问题呢？从面值最大的硬币开始兑换，最后得出的硬币总数很有可能就是最少的。</p> <p>我用一个例子，带你看下整个贪心算法求解的过程，我们从 c[0]=5, c[1]=3 且 k=11 的情
+况下寻求最少硬币数。按照“贪心原则”，我们先挑选面值最大的，即为 5 的硬币放入钱
+包。接着，还有 6 元待解（即 11-5 = 6）。这时，我们再次“贪心”，放入 5 元面值的硬
+币。</p> <p>这段代码就是简单地从最大的面值开始尝试，每次都会把当前面值的硬币尽量用光，然后
+才会尝试下一种面值的货币。</p> <p>嗯。。。你有没有发现问题？那就是还剩 1 元零钱待找，但是我们只有 c[0]=5, c[1]=3 两
+种面值的硬币，怎么办？这个问题无解了，该返回 -1 了吗？显然不是。
+我们把第 2 步放入的 5 元硬币取出，放入面值为 3 元的硬币试试看。这时，你就会发现，
+我们还剩 3 元零钱待找。
+正好我们还有 c[1]=3 的硬币可以使用，因此解是 c[0]=5, c[1]=3, c[1]=3，即最少使用三
+枚硬币凑出了 k=11 这个金额。</p> <p>我们对贪心算法做了改进，引入了回溯来解决前面碰到的“过于贪心”的问题。同样地，
+我把改进后的代码贴在这，你可以再看看跟之前算法实现的区别。</p> <p>改进后的算法实现在之前的基础上增加上了一个回溯过程。简单地说就是多了一个递归，
+不断尝试用更少的当前面值来拼凑。只要有一个组合成功，我们就返回总数，如果所有组
+合都尝试失败，就返回 -1。
+嗯，这样就没问题了，对硬币找零问题来说，我们得到了理想的结果。</p> <p>贪心算法的局限性</p> <p>从上面这个例子我们可以看出，如果只是简单采用贪心的思路，那么到用完 2 个 5 元硬币
+的时候我们就已经黔驴技穷了——因为剩下的 1 元无论如何都没法用现在的硬币凑出来。
+这是什么问题导致的呢？
+这就是贪心算法所谓的局部最优导致的问题，因为我们每一步都尽量多地使用面值最大的
+硬币，因为这样数量肯定最小，但是有的时候我们就进入了死胡同，就好比上面这个例
+子。</p> <p>所谓局部最优，就是只考虑“当前”的最大利益，既不向前多看一步，也不向后多看一
+步，导致每次都只用当前阶段的最优解。
+那么如果纯粹采用这种策略我们就永远无法达到整体最优，也就无法求得题目的答案了。
+至于能得到答案的情况那就是我们走狗屎运了。
+虽然纯粹的贪心算法作用有限，但是这种求解局部最优的思路在方向上肯定是对的，毕竟
+所谓的整体最优肯定是从很多个局部最优中选择出来的，因此所有最优化问题的基础都是
+贪心算法。
+回到前面的例子，我只不过是在贪心的基础上加入了失败后的回溯，稍微牺牲一点当前利
+益，仅仅是希望通过下一个硬币面值的局部最优达到最终可行的整体最优。</p> <p>所有贪心的思路就是我们最优化求解的根本思想，所有的方法只不过是针对贪心思路的改
+进和优化而已。回溯解决的是正确性问题，而动态规划则是解决时间复杂度的问题。
+贪心算法是求解整体最优的真正思路源头，这就是为什么我们要在课程的一开始就从贪心
+算法讲起。</p> <p>总结</p> <p>硬币找零问题本质上是求最值问题。事实上，动态规划问题的一般形式就是求最值，而求
+最值的核心思想是穷举。这是因为只要我们能够找到所有可能的答案，从中挑选出最优的
+解就是算法问题的结果。
+在没有优化的情况下，穷举从来就不算是一个好方法。所以我带你使用了贪心算法来解
+题，它是一种使用局部最优思想解题的算法（即从问题的某一个初始解出发逐步逼近给定
+的目标，以尽可能快的速度去求得更好的解，当达到算法中的某一步不能再继续前进时，
+算法停止）。
+但是通过硬币找零问题，我们也发现了贪心算法本身的局限性：</p> <p>不能保证求得的最后解是最佳的；</p> <p>不能用来求最大或最小解问题；
+只能求满足某些约束条件的可行解的范围。</p> <p>我们往往需要使用回溯来优化贪心算法，否则就会导致算法失效。因此，在求解最值问题
+时，我们需要更好的方法来解。在后面课程讲到递归和穷举优化问题的时候，我会讲到解
+决最值问题的正确思路和方法：考虑整体最优的问题。</p> <p>们学习了贪心算法，提出了硬币找零的问题，发现了贪心算法的局限性。与此同
+时，我还提出了一个重要概念，那就是局部最优与整体最优的概念，即最优化问题。今
+天，我们就从最优化问题开始聊起，引出学习动态规划时的另一重要概念：递归。
+我们之前说过，贪心算法是求解整体最优的真正思路源头，这是为什么我们要在这门课程
+的一开始从贪心算法讲起。现在，你应该已经意识到贪心算法是有局限性的，它只能在局
+部最优的思想下工作，那么当贪心算法失效了怎么办？
+接下来我们就带着这个问题，开始学习今天的内容：递归！看看它能否更进一步地解决我
+们遇到的棘手问题，从整体最优的角度来解决算法问题。</p> <p>从最优化问题到递归</p> <p>贪心算法失效的很大一个原因在于它明显的局限性：它几乎只考虑局部最优解。所谓局部
+最优，就是只考虑当前的最大利益，既不向前多看一步，也不向后多看一步，导致每次都
+只用当前阶段的最优解。</p> <p>因此在绝大多数情况下，贪心算法不能得到整体最优解，但它的解是最优解的一个很好近
+似。同时，也是所有讨论最优化问题的核心基础。</p> <p>既然无法通过贪心算法达到整体最优，我们就得换一个思路了：我们得从整体最优的层面
+上解决这个难缠的算法问题。那么从何说起呢？我认为你应该先理解最优化问题的本质，
+然后再把这个思考扩展到递归问题上。话不多说，我们这就开始吧！</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/algorithm/greedy.html" class="prev">
+        贪心算法
+      </a></span> <span class="next"><a href="/blog/java/throughout.html">
+        并发处理中延迟与吞吐量的关系
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9a7aa7da.js" defer></script><script src="/assets/js/45.99a3547d.js" defer></script><script src="/assets/js/2.eeca2164.js" defer></script><script src="/assets/js/56.7e8df4fb.js" defer></script>
+  </body>
+</html>

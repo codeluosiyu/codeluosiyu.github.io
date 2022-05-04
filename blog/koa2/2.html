@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>node进阶——之事无巨细手写koa源码 | 程序员思语</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script src="/assets/js/autopush-baidu.js"></script>
+    <script src="/assets/js/autopush-360.js"></script>
+    <meta name="description" content="程序员思语个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.23ddddd1.css" as="style"><link rel="preload" href="/assets/js/app.9a7aa7da.js" as="script"><link rel="preload" href="/assets/js/45.99a3547d.js" as="script"><link rel="preload" href="/assets/js/2.eeca2164.js" as="script"><link rel="preload" href="/assets/js/62.ab950062.js" as="script"><link rel="prefetch" href="/assets/js/10.efa00aa1.js"><link rel="prefetch" href="/assets/js/100.5d8f07f9.js"><link rel="prefetch" href="/assets/js/101.12bf9e38.js"><link rel="prefetch" href="/assets/js/102.6a9b4789.js"><link rel="prefetch" href="/assets/js/103.1896ac27.js"><link rel="prefetch" href="/assets/js/104.3eaf1060.js"><link rel="prefetch" href="/assets/js/105.04b7a748.js"><link rel="prefetch" href="/assets/js/106.473fefb1.js"><link rel="prefetch" href="/assets/js/107.4baf2120.js"><link rel="prefetch" href="/assets/js/108.785bd85a.js"><link rel="prefetch" href="/assets/js/109.26310598.js"><link rel="prefetch" href="/assets/js/11.266365e0.js"><link rel="prefetch" href="/assets/js/110.e627880f.js"><link rel="prefetch" href="/assets/js/111.28fcf7d6.js"><link rel="prefetch" href="/assets/js/112.6d47389e.js"><link rel="prefetch" href="/assets/js/113.fa1c8a31.js"><link rel="prefetch" href="/assets/js/114.204f9ff5.js"><link rel="prefetch" href="/assets/js/115.a7b15e52.js"><link rel="prefetch" href="/assets/js/116.b26fe275.js"><link rel="prefetch" href="/assets/js/117.09591d9c.js"><link rel="prefetch" href="/assets/js/118.f5ecbb2b.js"><link rel="prefetch" href="/assets/js/119.1beee065.js"><link rel="prefetch" href="/assets/js/12.88ccf36b.js"><link rel="prefetch" href="/assets/js/120.07d67d46.js"><link rel="prefetch" href="/assets/js/121.269a1379.js"><link rel="prefetch" href="/assets/js/122.534def5b.js"><link rel="prefetch" href="/assets/js/123.d3bbe913.js"><link rel="prefetch" href="/assets/js/124.7dd40d5a.js"><link rel="prefetch" href="/assets/js/125.6b746852.js"><link rel="prefetch" href="/assets/js/126.c3c8a927.js"><link rel="prefetch" href="/assets/js/127.c4deb22e.js"><link rel="prefetch" href="/assets/js/128.a10f8a5e.js"><link rel="prefetch" href="/assets/js/129.dc56eb4c.js"><link rel="prefetch" href="/assets/js/13.ea306a53.js"><link rel="prefetch" href="/assets/js/130.82df3f94.js"><link rel="prefetch" href="/assets/js/131.83659737.js"><link rel="prefetch" href="/assets/js/132.32263140.js"><link rel="prefetch" href="/assets/js/133.85756ff4.js"><link rel="prefetch" href="/assets/js/134.7c385905.js"><link rel="prefetch" href="/assets/js/135.ff9577ad.js"><link rel="prefetch" href="/assets/js/136.f6429275.js"><link rel="prefetch" href="/assets/js/137.fdde18fe.js"><link rel="prefetch" href="/assets/js/138.0665a9ca.js"><link rel="prefetch" href="/assets/js/139.d35f9735.js"><link rel="prefetch" href="/assets/js/14.d71709ea.js"><link rel="prefetch" href="/assets/js/140.c3eeac78.js"><link rel="prefetch" href="/assets/js/141.2e6c018c.js"><link rel="prefetch" href="/assets/js/142.d594d833.js"><link rel="prefetch" href="/assets/js/143.f0905229.js"><link rel="prefetch" href="/assets/js/144.b4fa47e6.js"><link rel="prefetch" href="/assets/js/145.cef2f196.js"><link rel="prefetch" href="/assets/js/146.6c5b5bd2.js"><link rel="prefetch" href="/assets/js/147.06d6415e.js"><link rel="prefetch" href="/assets/js/148.daa2aef4.js"><link rel="prefetch" href="/assets/js/149.a2eb9e99.js"><link rel="prefetch" href="/assets/js/15.c7ec1a1b.js"><link rel="prefetch" href="/assets/js/150.a45920b0.js"><link rel="prefetch" href="/assets/js/151.099829e8.js"><link rel="prefetch" href="/assets/js/152.fd1e487c.js"><link rel="prefetch" href="/assets/js/153.3fb2564f.js"><link rel="prefetch" href="/assets/js/154.77582580.js"><link rel="prefetch" href="/assets/js/155.ff966872.js"><link rel="prefetch" href="/assets/js/156.a75a12c1.js"><link rel="prefetch" href="/assets/js/157.714163f5.js"><link rel="prefetch" href="/assets/js/158.800faab3.js"><link rel="prefetch" href="/assets/js/159.53a68ffe.js"><link rel="prefetch" href="/assets/js/16.9cf439e7.js"><link rel="prefetch" href="/assets/js/160.f0de3abe.js"><link rel="prefetch" href="/assets/js/161.aef67afc.js"><link rel="prefetch" href="/assets/js/162.fc48976c.js"><link rel="prefetch" href="/assets/js/163.345bb4ad.js"><link rel="prefetch" href="/assets/js/164.726098dc.js"><link rel="prefetch" href="/assets/js/165.38f39905.js"><link rel="prefetch" href="/assets/js/166.675b91f5.js"><link rel="prefetch" href="/assets/js/167.b1bbc528.js"><link rel="prefetch" href="/assets/js/168.067cac4e.js"><link rel="prefetch" href="/assets/js/169.f8d1c083.js"><link rel="prefetch" href="/assets/js/17.77cc8084.js"><link rel="prefetch" href="/assets/js/170.3c89c3a8.js"><link rel="prefetch" href="/assets/js/171.6f8ef2dc.js"><link rel="prefetch" href="/assets/js/172.47997696.js"><link rel="prefetch" href="/assets/js/173.97369ef8.js"><link rel="prefetch" href="/assets/js/174.3f1d4ada.js"><link rel="prefetch" href="/assets/js/175.6f250d0d.js"><link rel="prefetch" href="/assets/js/176.c476908f.js"><link rel="prefetch" href="/assets/js/177.070eb013.js"><link rel="prefetch" href="/assets/js/178.cf43301a.js"><link rel="prefetch" href="/assets/js/179.6df69364.js"><link rel="prefetch" href="/assets/js/18.58e75a9e.js"><link rel="prefetch" href="/assets/js/19.486266d1.js"><link rel="prefetch" href="/assets/js/20.adc2d276.js"><link rel="prefetch" href="/assets/js/21.db506430.js"><link rel="prefetch" href="/assets/js/22.eb94b3b5.js"><link rel="prefetch" href="/assets/js/23.887f0c17.js"><link rel="prefetch" href="/assets/js/24.cd9b0cac.js"><link rel="prefetch" href="/assets/js/25.598ee441.js"><link rel="prefetch" href="/assets/js/26.a8a16beb.js"><link rel="prefetch" href="/assets/js/27.2d6352c7.js"><link rel="prefetch" href="/assets/js/28.4a83baa7.js"><link rel="prefetch" href="/assets/js/29.bc5ca9c8.js"><link rel="prefetch" href="/assets/js/3.7727965b.js"><link rel="prefetch" href="/assets/js/30.24b66fb8.js"><link rel="prefetch" href="/assets/js/31.f424143f.js"><link rel="prefetch" href="/assets/js/32.2bcffb44.js"><link rel="prefetch" href="/assets/js/33.a92f4dd5.js"><link rel="prefetch" href="/assets/js/34.993794f0.js"><link rel="prefetch" href="/assets/js/35.f4312cfe.js"><link rel="prefetch" href="/assets/js/36.22b33fc6.js"><link rel="prefetch" href="/assets/js/37.29bab3e2.js"><link rel="prefetch" href="/assets/js/38.db730eea.js"><link rel="prefetch" href="/assets/js/39.3b0af3d4.js"><link rel="prefetch" href="/assets/js/4.36c2b48f.js"><link rel="prefetch" href="/assets/js/40.cbcfa53a.js"><link rel="prefetch" href="/assets/js/41.cc547f2a.js"><link rel="prefetch" href="/assets/js/42.671c3c8c.js"><link rel="prefetch" href="/assets/js/43.38721000.js"><link rel="prefetch" href="/assets/js/44.45d5caed.js"><link rel="prefetch" href="/assets/js/46.a0eac4f4.js"><link rel="prefetch" href="/assets/js/47.bbfdd998.js"><link rel="prefetch" href="/assets/js/48.5cc655b0.js"><link rel="prefetch" href="/assets/js/49.96dfdb68.js"><link rel="prefetch" href="/assets/js/5.de06982c.js"><link rel="prefetch" href="/assets/js/50.922bd3f5.js"><link rel="prefetch" href="/assets/js/51.b31d0969.js"><link rel="prefetch" href="/assets/js/52.4a9e67a9.js"><link rel="prefetch" href="/assets/js/53.89329de3.js"><link rel="prefetch" href="/assets/js/54.4136713b.js"><link rel="prefetch" href="/assets/js/55.161344b7.js"><link rel="prefetch" href="/assets/js/56.7e8df4fb.js"><link rel="prefetch" href="/assets/js/57.708cd756.js"><link rel="prefetch" href="/assets/js/58.526d6afa.js"><link rel="prefetch" href="/assets/js/59.d27f25bc.js"><link rel="prefetch" href="/assets/js/6.7207dc06.js"><link rel="prefetch" href="/assets/js/60.9f4087f7.js"><link rel="prefetch" href="/assets/js/61.9bc26b94.js"><link rel="prefetch" href="/assets/js/63.6bb2f66d.js"><link rel="prefetch" href="/assets/js/64.898b4311.js"><link rel="prefetch" href="/assets/js/65.553a7610.js"><link rel="prefetch" href="/assets/js/66.bbe58a33.js"><link rel="prefetch" href="/assets/js/67.69f09bcf.js"><link rel="prefetch" href="/assets/js/68.8c22fc8a.js"><link rel="prefetch" href="/assets/js/69.24b55957.js"><link rel="prefetch" href="/assets/js/7.2508a8d3.js"><link rel="prefetch" href="/assets/js/70.a9562950.js"><link rel="prefetch" href="/assets/js/71.3f5184f9.js"><link rel="prefetch" href="/assets/js/72.ec17e723.js"><link rel="prefetch" href="/assets/js/73.e6987c1d.js"><link rel="prefetch" href="/assets/js/74.651351e4.js"><link rel="prefetch" href="/assets/js/75.36c1f490.js"><link rel="prefetch" href="/assets/js/76.b934f71e.js"><link rel="prefetch" href="/assets/js/77.cd96246d.js"><link rel="prefetch" href="/assets/js/78.cf23e0f3.js"><link rel="prefetch" href="/assets/js/79.63dc96a7.js"><link rel="prefetch" href="/assets/js/8.b697185c.js"><link rel="prefetch" href="/assets/js/80.c9a8f488.js"><link rel="prefetch" href="/assets/js/81.fc0ab67f.js"><link rel="prefetch" href="/assets/js/82.71f7f69b.js"><link rel="prefetch" href="/assets/js/83.94560ac7.js"><link rel="prefetch" href="/assets/js/84.35e1adb8.js"><link rel="prefetch" href="/assets/js/85.3a8003dc.js"><link rel="prefetch" href="/assets/js/86.2f386e8f.js"><link rel="prefetch" href="/assets/js/87.f00181da.js"><link rel="prefetch" href="/assets/js/88.6c2f3b9b.js"><link rel="prefetch" href="/assets/js/89.6b50302a.js"><link rel="prefetch" href="/assets/js/9.f2e3638d.js"><link rel="prefetch" href="/assets/js/90.677b4ef5.js"><link rel="prefetch" href="/assets/js/91.e27f36b9.js"><link rel="prefetch" href="/assets/js/92.e4d83b31.js"><link rel="prefetch" href="/assets/js/93.f58fb5e9.js"><link rel="prefetch" href="/assets/js/94.72807ad9.js"><link rel="prefetch" href="/assets/js/95.3f021f14.js"><link rel="prefetch" href="/assets/js/96.66b26129.js"><link rel="prefetch" href="/assets/js/97.3508edbe.js"><link rel="prefetch" href="/assets/js/98.681b1648.js"><link rel="prefetch" href="/assets/js/99.eda8b591.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23ddddd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员思语</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/openSource/start/" class="nav-link">
+  开源
+</a></div><div class="nav-item"><a href="/miniprogram/component/basic/button.html" class="nav-link">
+  Loreal UI组件库
+</a></div><div class="nav-item"><a href="/animation/" class="nav-link">
+  Loreal动画库
+</a></div><div class="nav-item"><a href="/blog/underscore/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  日记
+</a></div> <a href="https://github.com/GitLuoSiyu" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>日常博客</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/axios/" class="sidebar-link">No.1 学习 axios ，打造属于自己的请求库</a></li><li><a href="/blog/koa/" class="sidebar-link">No.2 学习 koa 源码的整体架构，浅析koa洋葱模型原理和co原理</a></li><li><a href="/blog/lodash/" class="sidebar-link">No.3 学习 lodash ，打造属于自己的函数式编程类库</a></li><li><a href="/blog/redux/" class="sidebar-link">No.4 学习 redux ，深入理解 redux 及其中间件原理</a></li><li><a href="/blog/sentry/" class="sidebar-link">No.5 学习 sentry 源码整体架构，打造属于自己的前端异常监控SDK</a></li><li><a href="/blog/timeline/" class="sidebar-link">No.6 Time Line</a></li><li><a href="/blog/underscore/" class="sidebar-link">No.7 学习 underscore ，打造属于自己的函数式编程类库</a></li><li><a href="/blog/vuex/" class="sidebar-link">No.8 学习 vuex ，打造属于自己的状态管理库</a></li><li><a href="/blog/miniprogram/login.html" class="sidebar-link">小程序（五）用户登录架构设计</a></li><li><a href="/blog/performance/1.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li><li><a href="/blog/performance/2.html" class="sidebar-link">图片优化——质量与性能的博弈</a></li><li><a href="/blog/performance/3.html" class="sidebar-link">Performance、LightHouse 与性能 API</a></li><li><a href="/blog/performance/4.html" class="sidebar-link">服务端渲染的探索与实践</a></li><li><a href="/blog/performance/5.html" class="sidebar-link">知己知彼——解锁浏览器背后的运行机制</a></li><li><a href="/blog/performance/6.html" class="sidebar-link">对症下药—— DOM 优化原理与基本实践</a></li><li><a href="/blog/performance/7.html" class="sidebar-link">千方百计——Event Loop 与异步更新策略</a></li><li><a href="/blog/performance/8.html" class="sidebar-link">前言</a></li><li><a href="/blog/performance/9.html" class="sidebar-link">优化首屏体验——Lazy-Load 初探</a></li><li><a href="/blog/performance/10.html" class="sidebar-link">事件的节流（throttle）与防抖（debounce）</a></li><li><a href="/blog/performance/11.html" class="sidebar-link">/blog/performance/11.html</a></li><li><a href="/blog/performance/12.html" class="sidebar-link">浏览器缓存机制介绍与缓存策略剖析</a></li><li><a href="/blog/performance/13.html" class="sidebar-link">CDN 的缓存与回源机制解析</a></li><li><a href="/blog/tabbar/" class="sidebar-link">小程序自定义TabBar</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法训练营</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java训练营</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="node进阶-之事无巨细手写koa源码"><a href="#node进阶-之事无巨细手写koa源码" class="header-anchor">#</a> node进阶——之事无巨细手写koa源码</h1> <p>koa是一个基于nodejs的web开发框架，特点是小而精，对比大而全的express，两者虽然由同一团队开发，但各有其更适合的应用场景：express适合开发较大的企业级应用，而koa致力于成为web开发中的基石，例如egg.js就是基于koa开发的。</p> <p>关于两个框架的区别和联系，后期我会再写一篇express源码解析，这里不赘述。本文的主要目的如下：
+koa官网上说：“koa提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序”。这套优雅的方法是什么？是如何实现的？让我们一探究竟，并手写源码。</p> <p>过去我不了解太阳，那时我过的是冬天——聂鲁达</p> <p>傻瓜式用法
+koa的用法可以说非常傻瓜，我们快速过一下：
+首先映入眼帘的不是假山，是hello world
+const Koa = require('koa');
+const app = new Koa();</p> <p>app.use((ctx, next) =&gt; {
+ctx.body = 'Hello World';
+});</p> <p>app.listen(3000);
+复制代码
+不用框架时的写法
+let http = require('http')</p> <p>let server = http.createServer((req, res) =&gt; {
+res.end('hello world')
+})</p> <p>server.listen(4000)
+复制代码
+对比发现，相对原生，koa多了两个实例上的use、listen方法，和use回调中的ctx、next两个参数。这四个不同，几乎就是koa的全部了，也是这四个不同让koa如此强大。
+listen
+简单！http的语法糖，实际上还是用了http.createServer()，然后监听了一个端口。
+ctx
+比较简单！利用 上下文(context) 机制，将原来的req,res对象合二为一，并进行了大量拓展,使开发者可以方便的使用更多属性和方法，大大减少了处理字符串、提取信息的时间，免去了许多引入第三方包的过程。(例如ctx.query、ctx.path等)
+use
+重点！koa的核心 —— 中间件（middleware）。解决了异步编程中回调地狱的问题，基于Promise，利用 洋葱模型 思想，使嵌套的、纠缠不清的代码变得清晰、明确，并且可拓展，可定制，借助许多第三方中间件，可以使精简的koa更加全能（例如koa-router，实现了路由）。其原理主要是一个极其精妙的 compose 函数。在使用时，用 next() 方法，从上一个中间件跳到下一个中间件。
+注：以上加粗部分，下面都有详细介绍。
+源码
+koa有多简单？简单到只有四个文件，算上大量的空行和注释，加起来不到1800行代码（有用的也就几百行）。
+github.com/koajs/koa/t…</p> <p>所以，学习koa源码并不是一个痛苦的过程。豪不夸张的说，搞定这四个文件，手写下面的100多行代码，你就能完全理解koa。为了防止大段代码的出现，我会讲的很详细。
+准备工作
+模仿官方，我们建立一个koa文件夹，并创建四个文件：application.js，context.js，request.js，response.js。
+通过查看package.json可以发现，application.js为入口文件。</p> <p>context.js是上下文对象相关，request.js是请求对象相关，response.js是响应对象相关。</p> <p>首先，梳理一下思路，原理无非就是use的时候拿到一个回调函数，listen的时候执行这个函数。</p> <p>此外，use回调函数的参数ctx拓展了很多功能，这个ctx其实就是原生的req、res经过一系列处理产生的。</p> <p>其实，第一句不准确，use可以多次，所以是多个回调函数，用户第二个参数next()跳到下一个，把多个use的回调函数按照规则顺序执行。</p> <p>那么，看起来就很简单了，难点只有两个：一个是如何将原生req和res加工成ctx，另一个是如何实现中间件。</p> <p>第一个，ctx其实就是一个上下文对象，request和response两个文件用来拓展属性，context文件实现代理，我们会手写相关源码。</p> <p>第二个，源码中的中间件由一个中间件执行模块koa-compose实现，这里我们会手写一个。</p> <p>application.js
+结合上面hello world，可以明确，koa是一个类,实例上主要两个方法，use和listen。
+上面说过，listen是http的语法糖，所以要引入http模块。
+Koa有一套错误处理机制,需要监听实例的error事件。所以要引入events模块继承EventEmitter。再引入另外三个自定义模块。
+let http = require('http')
+let EventEmitter = require('events')
+let context = require('./context')
+let request = require('./request')
+let response = require('./response')</p> <p>class Koa extends EventEmitter {
+constructor () {
+super()
+}
+use () {</p> <p>}
+listen () {</p> <p>}
+}</p> <p>module.exports = Koa
+复制代码
+这三个模块，其实都是一个对象，为了代码能跑通，这里先简单导出一下。
+context.js
+let proto = {} // proto同源码定义的变量名
+module.exports = proto
+复制代码
+request.js
+let request = {}
+module.exports = request
+复制代码
+response.js
+let response = {}
+module.exports = response
+复制代码
+开始写Koa类里面的代码，先实现创建服务的功能：1、listen方法创建一个http服务并监听一个端口。2、use方法把回调传入。
+class Koa extends EventEmitter {
+constructor () {
+super()
+this.fn
+}
+use (fn) {
+this.fn = fn // 用户使用use方法时，回调赋给this.fn
+}
+listen (...args) {
+let server = http.createServer(this.fn) // 放入回调
+server.listen(...args) // 因为listen方法可能有多参数，所以这里直接解构所有参数就可以了
+}
+}
+复制代码
+这样就可以启动一个服务了，测试一下：
+let Koa = require('./application')
+let app = new Koa()</p> <p>app.use((req, res) =&gt; { // 还没写中间件，所以这里还不是ctx和next
+res.end('hello world')
+})</p> <p>app.listen(3000)
+复制代码
+下面先解决ctx，ctx是一个上下文对象，里面绑定了很多请求和相应相关的数据和方法，例如ctx.path、ctx.query、ctx.body()等等等等，极大的为开发提供了便利。
+思路是这样的：用户调用use方法时，把这个回调fn存起来，创建一个createContext函数用来创建上下文，创建一个handleRequest函数用来处理请求，用户listen时将handleRequest放进createServer回调中，在函数内调用fn并将上下文对象传入，用户就得到了ctx。
+class Koa extends EventEmitter {
+constructor () {
+super()
+this.fn
+this.context = context // 将三个模块保存，全局的放到实例上
+this.request = request
+this.response = response
+}
+use (fn) {
+this.fn = fn
+}
+createContext(req, res){ // 这是核心，创建ctx
+// 使用Object.create方法是为了继承this.context但在增加属性时不影响原对象
+const ctx = Object.create(this.context)
+const request = ctx.request = Object.create(this.request)
+const response = ctx.response = Object.create(this.response)
+// 请仔细阅读以下眼花缭乱的操作，后面是有用的
+ctx.req = request.req = response.req = req
+ctx.res = request.res = response.res = res
+request.ctx = response.ctx = ctx
+request.response = response
+response.request = request
+return ctx
+}
+handleRequest(req,res){ // 创建一个处理请求的函数
+let ctx = this.createContext(req, res) // 创建ctx
+this.fn(ctx) // 调用用户给的回调，把ctx还给用户使用。
+res.end(ctx.body) // ctx.body用来输出到页面，后面会说如何绑定数据到ctx.body
+}
+listen (...args) {
+let server = http.createServer(this.handleRequest.bind(this))// 这里使用bind调用，以防this丢失
+server.listen(...args)
+}
+}
+复制代码</p> <p>如果不理解Object.create可以看这个例子：
+let o1 = {a: 'hello'}
+let o2 = Object.create(o1)
+o2.b = 'world'
+console.log('o1:', o1.b) // 创建出的对象不会影响原对象
+console.log('o2:', o2.a) // 创建出的对象会继承原对象的属性
+复制代码</p> <p>o1: undefined
+o2: hello</p> <p>经过上面的操作，用户在ctx上可以用各种姿势取到想要的值。
+例如url，可以用ctx.req.url、ctx.request.req.url、ctx.response.req.url取到。
+app.use((ctx) =&gt; {
+console.log(ctx.req.url)
+console.log(ctx.request.req.url)
+console.log(ctx.response.req.url)
+console.log(ctx.request.url)
+console.log(ctx.request.path)
+console.log(ctx.url)
+console.log(ctx.path)
+})
+复制代码
+访问localhost:3000/abc</p> <p>/abc
+/abc
+/abc
+/undefined
+/undefined
+/undefined
+/undefined</p> <p>姿势多，不一定爽，要想爽，我们希望能实现以下两点：</p> <p>从自定义的request上取值、拓展除了原生属性外的更多属性，例如query path等。
+能够直接通过ctx.url的方式取值，上面都不够方便。</p> <p>1 修改request
+request.js
+let url = require('url')
+let request = {
+get url() { // 这样就可以用ctx.request.url上取值了，不用通过原生的req
+return this.req.url
+},
+get path() {
+return url.parse(this.req.url).pathname
+},
+get query() {
+return url.parse(this.req.url).query
+}
+// 。。。。。。
+}
+module.exports = request
+复制代码
+非常简单，使用对象get访问器返回一个处理过的数据就可以将数据绑定到request上了，这里的问题是如何拿到数据，由于前面ctx.request这一步，所以this就是ctx，那this.req就是原生的req，再利用一些第三方模块对req进行处理就可以了，源码上拓展了非常多，这里只举例几个，看懂原理即可。
+访问localhost:3000/abc?id=1</p> <p>/abc?id=1
+/abc?id=1
+/abc?id=1
+/abc?id=1
+/abc
+undefined
+undefined</p> <p>2 接下来要实现ctx直接取值，这里是通过一个代理来实现的
+context.js
+let proto = {</p> <p>}
+function defineGetter(prop, name){ // 创建一个defineGetter函数，参数分别是要代理的对象和对象上的属性
+proto.<strong>defineGetter</strong>(name, function(){ // 每个对象都有一个__defineGetter__方法，可以用这个方法实现代理，下面详解
+return this[prop][name] // 这里的this是ctx（原因下面解释），所以ctx.url得到的就是this.request.url
+})
+}
+defineGetter('request', 'url')
+defineGetter('request', 'path')
+// .......
+module.exports = proto
+复制代码
+访问localhost:3000/abc?id=1</p> <p>/abc?id=1
+/abc?id=1
+/abc?id=1
+/abc?id=1
+/abc
+/abc?id=1
+/abc</p> <p>__defineGetter__方法可以将一个函数绑定在当前对象的指定属性上，当那个属性的值被读取时，你所绑定的函数就会被调用，第一个参数是属性，第二个是函数，由于ctx继承了proto，所以当ctx.url时，触发了__defineGetter__方法，所以这里的this就是ctx。这样，当调用defineGetter方法，就可以将参数一的参数二属性代理到ctx上了。
+有个问题，要代理多少个属性就要调用多少遍defineGetter函数么？是的，如果想优雅一点，可以模仿官方源码，提出一个delegates模块，批量代理（其实也没优雅到哪去），这里为了方便展示，还是看懂即可吧。
+3 修改response。根据koa的api，输出数据到页面不是res.end('xx')也不是res.send('xx')，而是ctx.body = 'xx'。我们要实现设置ctx.body，还要实现获取ctx.body。
+response.js
+let response = {
+get body(){
+return this._body // get时返回出去
+},
+set body(value){
+this.res.statusCode = 200 // 只要设置了body，就应该把状态码设置为200
+this._body = value // set时先保存下来
+}
+}
+module.exports = response
+复制代码
+这样得到的是ctx.response.body，并不是ctx.body，同样，通过context代理一下
+修改context
+let proto = {</p> <p>}
+function defineGetter (prop, name) {
+proto.<strong>defineGetter</strong>(name, function(){
+return this[prop][name]
+})
+}
+function defineSetter (prop, name) {
+proto.<strong>defineSetter</strong>(name, function(val){ // 用__defineSetter__方法设置值
+this[prop][name] = val
+})
+}
+defineGetter('request', 'url')
+defineGetter('request', 'path')
+defineGetter('response', 'body') // 同样代理response的body属性
+defineSetter('response', 'body') // 同理
+module.exports = proto
+复制代码
+测试一下
+app.use((ctx) =&gt; {
+ctx.body = 'hello world'
+console.log(ctx.body)
+})
+复制代码
+访问localhost:3000
+node控制台输出：</p> <p>hello world</p> <p>网页显示：hello world
+接下来解决一下body的问题，上面说了，一旦给body设置值，状态码就改成200，那么没设置值就应该是404。还有，用户不光会输出字符串，还有可能是文件、页面、json等，这里都要处理，所以改一下handleRequest函数：
+let Stream = require('stream') // 引入stream
+handleRequest(req,res){
+res.statusCode = 404 // 默认404
+let ctx = this.createContext(req, res)
+this.fn(ctx)
+if(typeof ctx.body == 'object'){ // 如果是个对象，按json形式输出
+res.setHeader('Content-Type', 'application/json;charset=utf8')
+res.end(JSON.stringify(ctx.body))
+} else if (ctx.body instanceof Stream){ // 如果是流
+ctx.body.pipe(res)
+}
+else if (typeof ctx.body === 'string' || Buffer.isBuffer(ctx.body)) { // 如果是字符串或buffer
+res.setHeader('Content-Type', 'text/htmlcharset=utf8')
+res.end(ctx.body)
+} else {
+res.end('Not found')
+}
+}
+复制代码
+这样上下文相关就实现了，接下来看重中之重：中间件
+现在只能use一次，我们要实现use多次，并可以在use的回调函数中使用next方法跳到下一个中间件，在此之前，我们先了解一个概念：“洋葱模型”。</p> <p>当我们多次使用use时
+app.use((crx, next) =&gt; {
+console.log(1)
+next()
+console.log(2)
+})
+app.use((crx, next) =&gt; {
+console.log(3)
+next()
+console.log(4)
+})
+app.use((crx, next) =&gt; {
+console.log(5)
+next()
+console.log(6)
+})
+复制代码
+它的执行顺序是这样的：</p> <p>1
+3
+5
+6
+4
+2</p> <p>next方法会调用下一个use，next下面的代码会在下一个use执行完再执行，我们可以把上面的代码想象成这样：
+app.use((ctx, next) =&gt; {
+console.log(1)
+// next()  被替换成下一个use里的代码
+console.log(3)
+// next()  又被替换成下一个use里的代码
+console.log(5)
+// next()  没有下一个use了，所以这个无效
+console.log(6)
+console.log(4)
+console.log(2)
+})
+复制代码
+这样的话，理所应当输出135642
+这就是洋葱模型了，通过next把执行权交给下一个中间件。
+这样，开发者手中的请求数据会像仪仗队一样，乖乖的经过每一层中间件的检阅，最后响应给用户。
+既应付了复杂的操作，又避免了混乱的嵌套。
+除此之外，koa的中间件还支持异步，可以使用async/await
+app.use(async (ctx, next) =&gt; {
+console.log(1)
+await next()
+console.log(2)
+})
+app.use(async (ctx, next) =&gt; {
+console.log(3)
+let p = new Promise((resolve, roject) =&gt; {
+setTimeout(() =&gt; {
+console.log('3.5')
+resolve()
+}, 1000)
+})
+await p.then()
+await next()
+console.log(4)
+ctx.body = 'hello world'
+})
+复制代码</p> <p>1
+3
+//  一秒后
+3.5
+4
+2</p> <p>async函数返回的是一个promise，当上一个use的next前加上await关键字，会等待下一个use的回调resolve了再继续执行代码。
+所有现在要做的事有两步：
+第一步，让多个use的回调按照顺序排列成串。
+这里用到了数组和递归，每次use将当前函数存到一个数组中，最后按顺序执行。执行这一步用到一个compose函数，这个函数是重中之重。
+constructor () {
+super()
+// this.fn  改成：
+this.middlewares = [] // 需要一个数组将每个中间件按顺序存放起来
+this.context = context
+this.request = request
+this.response = response
+}
+use (fn) {
+// this.fn = fn 改成：
+this.middlewares.push(fn) // 每次use，把当前回调函数存进数组
+}
+compose(middlewares, ctx){ // 简化版的compose，接收中间件数组、ctx对象作为参数
+function dispatch(index){ // 利用递归函数将各中间件串联起来依次调用
+if(index === middlewares.length) return // 最后一次next不能执行，不然会报错
+let middleware = middlewares[index] // 取当前应该被调用的函数
+middleware(ctx, () =&gt; dispatch(index + 1)) // 调用并传入ctx和下一个将被调用的函数，用户next()时执行该函数
+}
+dispatch(0)
+}
+handleRequest(req,res){
+res.statusCode = 404
+let ctx = this.createContext(req, res)
+// this.fn(ctx) 改成：
+this.compose(this.middlewares, ctx) // 调用compose，传入参数
+if(typeof ctx.body == 'object'){
+res.setHeader('Content-Type', 'application/json;charset=utf8')
+res.end(JSON.stringify(ctx.body))
+} else if (ctx.body instanceof Stream){
+ctx.body.pipe(res)
+}
+else if (typeof ctx.body === 'string' || Buffer.isBuffer(ctx.body)) {
+res.setHeader('Content-Type', 'text/htmlcharset=utf8')
+res.end(ctx.body)
+} else {
+res.end('Not found')
+}
+}
+复制代码
+再次测试上面打印123456的例子，可以正确的得到135642
+第二步，把每个回调包装成Promise以实现异步。
+最后一步，用Promise.resolve将每个回调包装成Promise，并在调用时then，不懂Promise的可以去看我的另一篇文章[juejin.im/post/684490…]
+compose(middlewares, ctx){
+function dispatch(index){
+if(index === middlewares.length) return Promise.resolve() // 若最后一个中间件，返回一个resolve的promise
+let middleware = middlewares[index]
+return Promise.resolve(middleware(ctx, () =&gt; dispatch(index + 1))) // 用Promise.resolve把中间件包起来
+}
+return dispatch(0)
+}
+handleRequest(req,res){
+res.statusCode = 404
+let ctx = this.createContext(req, res)
+let fn = this.compose(this.middlewares, ctx)
+fn.then(() =&gt; { // then了之后再进行判断
+if(typeof ctx.body == 'object'){
+res.setHeader('Content-Type', 'application/json;charset=utf8')
+res.end(JSON.stringify(ctx.body))
+} else if (ctx.body instanceof Stream){
+ctx.body.pipe(res)
+}
+else if (typeof ctx.body === 'string' || Buffer.isBuffer(ctx.body)) {
+res.setHeader('Content-Type', 'text/htmlcharset=utf8')
+res.end(ctx.body)
+} else {
+res.end('Not found')
+}
+}).catch(err =&gt; { // 监控错误发射error，用于app.on('error', (err) =&gt;{})
+this.emit('error', err)
+res.statusCode = 500
+res.end('server error')
+})
+}
+复制代码
+完整application代码
+let http = require('http')
+let EventEmitter = require('events')
+let context = require('./context')
+let request = require('./request')
+let response = require('./response')
+let Stream = require('stream')
+class Koa extends EventEmitter {
+constructor () {
+super()
+this.middlewares = []
+this.context = context
+this.request = request
+this.response = response
+}
+use (fn) {
+this.middlewares.push(fn)
+}
+createContext(req, res){
+const ctx = Object.create(this.context)
+const request = ctx.request = Object.create(this.request)
+const response = ctx.response = Object.create(this.response)
+ctx.req = request.req = response.req = req
+ctx.res = request.res = response.res = res
+request.ctx = response.ctx = ctx
+request.response = response
+response.request = request
+return ctx
+}
+compose(middlewares, ctx){
+function dispatch (index) {
+if (index === middlewares.length) return Promise.resolve()
+let middleware = middlewares[index]
+return Promise.resolve(middleware(ctx, () =&gt; dispatch(index + 1)))
+}
+return dispatch(0)
+}
+handleRequest(req,res){
+res.statusCode = 404
+let ctx = this.createContext(req, res)
+let fn = this.compose(this.middlewares, ctx)
+fn.then(() =&gt; {
+if (typeof ctx.body == 'object') {
+res.setHeader('Content-Type', 'application/json;charset=utf8')
+res.end(JSON.stringify(ctx.body))
+} else if (ctx.body instanceof Stream) {
+ctx.body.pipe(res)
+} else if (typeof ctx.body === 'string' || Buffer.isBuffer(ctx.body)) {
+res.setHeader('Content-Type', 'text/htmlcharset=utf8')
+res.end(ctx.body)
+} else {
+res.end('Not found')
+}
+}).catch(err =&gt; {
+this.emit('error', err)
+res.statusCode = 500
+res.end('server error')
+})
+}
+listen (...args) {
+let server = http.createServer(this.handleRequest.bind(this))
+server.listen(...args)
+}
+}</p> <p>module.exports = Koa
+复制代码
+总结
+这样就完成了全部核心功能的编写，通过本文你就可以足够了解koa了，如果对你有帮助，不妨点个赞。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9a7aa7da.js" defer></script><script src="/assets/js/45.99a3547d.js" defer></script><script src="/assets/js/2.eeca2164.js" defer></script><script src="/assets/js/62.ab950062.js" defer></script>
+  </body>
+</html>
