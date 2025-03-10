@@ -46,22 +46,22 @@
 &lt;l-loading show=&quot;{{true}}&quot; type=&quot;change&quot;&gt;&lt;/l-loading&gt;
 &lt;l-loading show=&quot;{{true}}&quot; type=&quot;circle&quot;&gt;&lt;/l-loading&gt;
 &lt;l-loading show=&quot;{{true}}&quot; type=&quot;rotate&quot;&gt;&lt;/l-loading&gt;
-</code></pre></div><p>
+</code></pre></div><p>:::img
 <img src="/screenshots/loading/1.png" alt="height=150">
-</p> <h2 id="加载动画大小"><a href="#加载动画大小" class="header-anchor">#</a> 加载动画大小</h2> <p>设置组件<code>size</code>属性可更改加载动画的大小。</p> <p><code>size</code>的可选值为<code>mini</code>、<code>medium</code>、<code>large</code>，默认为<code>medium</code>。</p> <h3 id="示例代码-2"><a href="#示例代码-2" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading show=&quot;{{true}}&quot; size=&quot;mini&quot;&gt;&lt;/l-loading&gt;
+:::</p> <h2 id="加载动画大小"><a href="#加载动画大小" class="header-anchor">#</a> 加载动画大小</h2> <p>设置组件<code>size</code>属性可更改加载动画的大小。</p> <p><code>size</code>的可选值为<code>mini</code>、<code>medium</code>、<code>large</code>，默认为<code>medium</code>。</p> <h3 id="示例代码-2"><a href="#示例代码-2" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading show=&quot;{{true}}&quot; size=&quot;mini&quot;&gt;&lt;/l-loading&gt;
 &lt;l-loading show=&quot;{{true}}&quot; size=&quot;medium&quot;&gt;&lt;/l-loading&gt;
 &lt;l-loading show=&quot;{{true}}&quot; size=&quot;large&quot;&gt;&lt;/l-loading&gt;
-</code></pre></div><p>
+</code></pre></div><p>:::img
 <img src="/screenshots/loading/2.png" alt="height=150">
-</p> <h2 id="自定义加载动画颜色"><a href="#自定义加载动画颜色" class="header-anchor">#</a> 自定义加载动画颜色</h2> <p>设置组件的<code>color</code>属性更改加载动画的颜色。默认颜色与主题色(theme_color)一致。</p> <h3 id="示例代码-3"><a href="#示例代码-3" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading show=&quot;{{true}}&quot; color=&quot;#666&quot;&gt;&lt;/l-loading&gt;
-</code></pre></div><p>
+:::</p> <h2 id="自定义加载动画颜色"><a href="#自定义加载动画颜色" class="header-anchor">#</a> 自定义加载动画颜色</h2> <p>设置组件的<code>color</code>属性更改加载动画的颜色。默认颜色与主题色(theme_color)一致。</p> <h3 id="示例代码-3"><a href="#示例代码-3" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading show=&quot;{{true}}&quot; color=&quot;#666&quot;&gt;&lt;/l-loading&gt;
+</code></pre></div><p>:::img
 <img src="/screenshots/loading/3.png" alt="height=150">
-</p> <h2 id="自定义加载动画"><a href="#自定义加载动画" class="header-anchor">#</a> 自定义加载动画</h2> <p>为适应不同的场景和需求，组件的内容部分（动画）可以通过自定义的方式来实现。</p> <p>设置组件的<code>custom</code>属性为 <code>true</code> ，自定义内容在slot插槽中写入即可。也支持传入一个包含文字+image的子节点。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>loading组件只接收一个slot作为子节点，但你可以在这个子节点内添加更多的标签和内容</li></ul></div> <h3 id="示例代码-4"><a href="#示例代码-4" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading show=&quot;{{true}}&quot; custom=&quot;{{true}}&quot;&gt;
+:::</p> <h2 id="自定义加载动画"><a href="#自定义加载动画" class="header-anchor">#</a> 自定义加载动画</h2> <p>为适应不同的场景和需求，组件的内容部分（动画）可以通过自定义的方式来实现。</p> <p>设置组件的<code>custom</code>属性为 <code>true</code> ，自定义内容在slot插槽中写入即可。也支持传入一个包含文字+image的子节点。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>loading组件只接收一个slot作为子节点，但你可以在这个子节点内添加更多的标签和内容</li></ul></div> <h3 id="示例代码-4"><a href="#示例代码-4" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading show=&quot;{{true}}&quot; custom=&quot;{{true}}&quot;&gt;
   &lt;image src=&quot;/image/view/spin.gif&quot;&gt;&lt;/image&gt;
 &lt;/l-loading&gt;
-</code></pre></div><p>
+</code></pre></div><p>:::img
 <img src="/screenshots/loading/4.png" alt="height=150">
-</p> <h2 id="全屏状态下的loading"><a href="#全屏状态下的loading" class="header-anchor">#</a> 全屏状态下的Loading</h2> <p>在开发工作的中，我们会遇到一种常见的场景：当跳转到一个新页面时，开始加载数据，全屏显示loading，当数据加载完成时，隐藏loading。</p> <p>针对这种场景，我们可以通过设置 <code>full-screen</code> 属性为 <code>true</code> ，并配合外部样式类 <code>l-container-class</code> 来完成,也可以使用<code>bg-color</code>、<code>z-index</code>、<code>opacity</code>属性来设置全屏状态下的背景颜色、层级和背景透明度。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>全屏模式下可以设置 <code>type</code> 值来指定不同的加载动画，同样也可以使用自定义的 <code>slot</code>，</li> <li><code>l-container-class</code> 无法改变<code>loading</code>背景的 <code>position</code>、<code>height</code>、<code>width</code> 属性。</li></ul></div> <h3 id="示例代码-5"><a href="#示例代码-5" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading
+:::</p> <h2 id="全屏状态下的loading"><a href="#全屏状态下的loading" class="header-anchor">#</a> 全屏状态下的Loading</h2> <p>在开发工作的中，我们会遇到一种常见的场景：当跳转到一个新页面时，开始加载数据，全屏显示loading，当数据加载完成时，隐藏loading。</p> <p>针对这种场景，我们可以通过设置 <code>full-screen</code> 属性为 <code>true</code> ，并配合外部样式类 <code>l-container-class</code> 来完成,也可以使用<code>bg-color</code>、<code>z-index</code>、<code>opacity</code>属性来设置全屏状态下的背景颜色、层级和背景透明度。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>全屏模式下可以设置 <code>type</code> 值来指定不同的加载动画，同样也可以使用自定义的 <code>slot</code>，</li> <li><code>l-container-class</code> 无法改变<code>loading</code>背景的 <code>position</code>、<code>height</code>、<code>width</code> 属性。</li></ul></div> <h3 id="示例代码-5"><a href="#示例代码-5" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading
   l-container-class=&quot;l-container&quot;
   bg-color=&quot;#f3f3f3&quot;
   z-index=&quot;776&quot;
@@ -72,9 +72,9 @@
 &gt;
   &lt;image class=&quot;loading-img&quot; src=&quot;/image/static/loading.gif&quot;&gt;&lt;/image&gt;
 &lt;/l-loading&gt;
-</code></pre></div><p>
+</code></pre></div><p>:::img
 <img src="/screenshots/loading/5.jpg" alt="height=200">
-</p> <h2 id="固定loading区域"><a href="#固定loading区域" class="header-anchor">#</a> 固定Loading区域</h2> <h3 id="示例代码-6"><a href="#示例代码-6" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading
+:::</p> <h2 id="固定loading区域"><a href="#固定loading区域" class="header-anchor">#</a> 固定Loading区域</h2> <h3 id="示例代码-6"><a href="#示例代码-6" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-loading
   l-container-class=&quot;l-container&quot;
   bg-color=&quot;#f3f3f3&quot;
   z-index=&quot;776&quot;
