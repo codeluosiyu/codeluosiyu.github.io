@@ -54,9 +54,9 @@
   type=&quot;confirm&quot;     
   title=&quot;标题&quot;
   content=&quot;这个是确认框&quot; /&gt;
-</code></pre></div><p>:::img
+</code></pre></div><p>
 <img src="/screenshots/dialog/1.jpg" alt="height=150">
-:::</p> <h2 id="无标题的模态弹框"><a href="#无标题的模态弹框" class="header-anchor">#</a> 无标题的模态弹框</h2> <p>模态框可以通过设置 <code>show-title</code> 属性为<code>true</code>、<code>false</code>来控制组件标题的显示和隐藏，不设置则显示状态默认为<code>true</code>。</p> <h3 id="示例代码-2"><a href="#示例代码-2" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;!-- 无标题提示框 --&gt;
+</p> <h2 id="无标题的模态弹框"><a href="#无标题的模态弹框" class="header-anchor">#</a> 无标题的模态弹框</h2> <p>模态框可以通过设置 <code>show-title</code> 属性为<code>true</code>、<code>false</code>来控制组件标题的显示和隐藏，不设置则显示状态默认为<code>true</code>。</p> <h3 id="示例代码-2"><a href="#示例代码-2" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;!-- 无标题提示框 --&gt;
 &lt;l-dialog 
   show=&quot;{{true}}&quot;
   type=&quot;alert&quot;  
@@ -71,9 +71,9 @@
   show-title=&quot;{{false}}&quot;
   title=&quot;标题&quot;
   content=&quot;这个是无标题确认框&quot; /&gt;
-</code></pre></div><p>:::img
+</code></pre></div><p>
 <img src="/screenshots/dialog/2.jpg" alt="height=150">
-:::</p> <h2 id="修改按钮文字和颜色"><a href="#修改按钮文字和颜色" class="header-anchor">#</a> 修改按钮文字和颜色</h2> <p>模态框的按钮支持 <code>文本内容</code> 和 <code>字体颜色</code> 的修改， 设置 <code>confirm-text</code> 和 <code>cancel-text</code> 可以更改模态框两个按钮的文本， <code>confirm-color</code> 和 <code>cancel-color</code> 则可以更改他们的字体颜色。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>提示框只需设置 <code>confirm-text</code>和  <code>confirm-color</code>。</li></ul></div> <h3 id="示例代码-3"><a href="#示例代码-3" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-dialog 
+</p> <h2 id="修改按钮文字和颜色"><a href="#修改按钮文字和颜色" class="header-anchor">#</a> 修改按钮文字和颜色</h2> <p>模态框的按钮支持 <code>文本内容</code> 和 <code>字体颜色</code> 的修改， 设置 <code>confirm-text</code> 和 <code>cancel-text</code> 可以更改模态框两个按钮的文本， <code>confirm-color</code> 和 <code>cancel-color</code> 则可以更改他们的字体颜色。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>提示框只需设置 <code>confirm-text</code>和  <code>confirm-color</code>。</li></ul></div> <h3 id="示例代码-3"><a href="#示例代码-3" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-dialog 
   show=&quot;{{true}}&quot;
   type=&quot;confirm&quot;  
   title=&quot;提问&quot;
@@ -82,9 +82,9 @@
   confirm-color=&quot;#f60&quot;
   cancel-text=&quot;no~&quot;
   cancel-color=&quot;#999&quot; /&gt;
-</code></pre></div><p>:::img
+</code></pre></div><p>
 <img src="/screenshots/dialog/3.jpg" alt="height=150">
-:::</p> <h2 id="设置子节点"><a href="#设置子节点" class="header-anchor">#</a> 设置子节点</h2> <p>我们在使用的组件的时候，可以根据使用场景,自由的在遮罩层组件内插入 <code>image</code>、 <code>view</code>、 <code>text</code> 等子节点，当然，你也可以在其中插入 <code>自定义组件</code> 。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>不建议在组件中传入多个子节点。</li> <li>子节点默认是垂直居中显示。</li></ul></div> <h3 id="示例代码-4"><a href="#示例代码-4" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-dialog 
+</p> <h2 id="设置子节点"><a href="#设置子节点" class="header-anchor">#</a> 设置子节点</h2> <p>我们在使用的组件的时候，可以根据使用场景,自由的在遮罩层组件内插入 <code>image</code>、 <code>view</code>、 <code>text</code> 等子节点，当然，你也可以在其中插入 <code>自定义组件</code> 。</p> <div class="custom-block tip"><p class="custom-block-title">注意事项</p> <ul><li>不建议在组件中传入多个子节点。</li> <li>子节点默认是垂直居中显示。</li></ul></div> <h3 id="示例代码-4"><a href="#示例代码-4" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-dialog 
   show=&quot;{{true}}&quot;
   type=&quot;confirm&quot;  
   show-title=&quot;{{false}}&quot;
@@ -93,9 +93,9 @@
   &lt;image class='dio-img' src='/path/to/example.gif'&gt;&lt;/image&gt;
 &lt;/l-dialog&gt;
 
-</code></pre></div><p>:::img
+</code></pre></div><p>
 <img src="/screenshots/dialog/4.jpg" alt="height=200">
-:::</p> <h2 id="锁定"><a href="#锁定" class="header-anchor">#</a> 锁定</h2> <p>模态框设置 <code>locked</code> 属性为 <code>false</code> 时，点击背景可隐藏模态框组件，默认为 <code>true</code> ， 即点击背景无法关闭该组件。</p> <h3 id="示例代码-5"><a href="#示例代码-5" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-dialog 
+</p> <h2 id="锁定"><a href="#锁定" class="header-anchor">#</a> 锁定</h2> <p>模态框设置 <code>locked</code> 属性为 <code>false</code> 时，点击背景可隐藏模态框组件，默认为 <code>true</code> ， 即点击背景无法关闭该组件。</p> <h3 id="示例代码-5"><a href="#示例代码-5" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-dialog 
   show=&quot;{{true}}&quot;
   type=&quot;alert&quot;  
   show-title=&quot;{{false}}&quot;

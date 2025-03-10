@@ -61,9 +61,9 @@
 	<span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre></div><div class="language-wxml extra-class"><pre class="language-text"><code>&lt;l-album urls='{{urls}}' key='newUrl'&gt;&lt;/l-album&gt;
-</code></pre></div><h2 id="图片展示"><a href="#图片展示" class="header-anchor">#</a> 图片展示</h2> <p>组件分为单图展示和多图展示两种情景，组件会根据传入的<code>urls</code>长度自动布局，不需要单独指定。</p> <ol><li>单图</li></ol> <p>当 <code>urls</code> 长度为 1 时，为单图展示情景。组件将所传图片等比压缩，长边压缩/拉伸至 360rpx。</p> <blockquote><p>组件只包含图片部分，其他部分代码为展示用。</p></blockquote> <p>:::img
+</code></pre></div><h2 id="图片展示"><a href="#图片展示" class="header-anchor">#</a> 图片展示</h2> <p>组件分为单图展示和多图展示两种情景，组件会根据传入的<code>urls</code>长度自动布局，不需要单独指定。</p> <ol><li>单图</li></ol> <p>当 <code>urls</code> 长度为 1 时，为单图展示情景。组件将所传图片等比压缩，长边压缩/拉伸至 360rpx。</p> <blockquote><p>组件只包含图片部分，其他部分代码为展示用。</p></blockquote> <p>
 <img src="/screenshots/album/image1.jpeg" alt="height=300">
-:::</p> <h3 id="示例代码"><a href="#示例代码" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;view&gt;
+</p> <h3 id="示例代码"><a href="#示例代码" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;view&gt;
     &lt;view class=&quot;album&quot;&gt;
         &lt;l-avatar class=&quot;avatar&quot; size='80' shape=&quot;square&quot; src=&quot;&quot; /&gt;
         &lt;view class=&quot;right&quot;&gt;
@@ -117,9 +117,9 @@
     margin-bottom: 40rpx;
     margin-top: 30rpx;
 }
-</code></pre></div><ol start="2"><li>多图</li></ol> <p>当 <code>urls</code> 长度大于 1 时，为多图展示情景。多图展示时，最多展示 9 张照片，如果所传 <code>urls</code> 长度超过 9，组件自动截取前 9 张照片进行展示。</p> <p>多图情景下，图片展示为边长<code>158rpx</code>的正方形图片。</p> <p>:::img
+</code></pre></div><ol start="2"><li>多图</li></ol> <p>当 <code>urls</code> 长度大于 1 时，为多图展示情景。多图展示时，最多展示 9 张照片，如果所传 <code>urls</code> 长度超过 9，组件自动截取前 9 张照片进行展示。</p> <p>多图情景下，图片展示为边长<code>158rpx</code>的正方形图片。</p> <p>
 <img src="/screenshots/album/image2.jpeg" alt="height=300">
-:::</p> <h3 id="示例代码-2"><a href="#示例代码-2" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;view&gt;
+</p> <h3 id="示例代码-2"><a href="#示例代码-2" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;view&gt;
     &lt;view class=&quot;album&quot;&gt;
         &lt;l-avatar class=&quot;avatar&quot; size='80' shape=&quot;square&quot; src=&quot;&quot; /&gt;
         &lt;view class=&quot;right&quot;&gt;
@@ -144,9 +144,9 @@
 </code></pre></div><div class="language-wxss extra-class"><pre class="language-text"><code>    wxss文件同上
 </code></pre></div><div class="custom-block tip"><p class="custom-block-title">多图展示规则</p> <p><strong>传入的urls长度不同，组件采用不同的布局形式，具体布局形式如下：</strong></p> <p><strong>2图</strong>:		一行两列</p> <p><strong>3图</strong>:		一行三列</p> <p><strong>4图</strong>:		两行两列</p> <p><strong>5、6图</strong>:	两行三列</p> <p><strong>7、8、9图</strong>:	三行三列</p></div> <h2 id="预览"><a href="#预览" class="header-anchor">#</a> 预览</h2> <p>组件图片是否支持预览，默认状态为支持，可以通过设置<code>preview</code>属性为<code>false</code>关闭。</p> <h2 id="图片尺寸"><a href="#图片尺寸" class="header-anchor">#</a> 图片尺寸</h2> <ol><li>单图</li></ol> <p>单张图片时，组件将所传图片等比压缩，长边压缩/拉伸至<code>360rpx</code>。通过设置<code>single-size</code>可以更改长边大小，单位<code>rpx</code>。</p> <ol start="2"><li>多图</li></ol> <p>多张图片时，图片展示为边长<code>158rpx</code>的正方形图片。通过设置<code>multiple-size</code>可以更改图片边长，单位<code>rpx</code></p> <h2 id="图像间隔"><a href="#图像间隔" class="header-anchor">#</a> 图像间隔</h2> <blockquote><p>此设置仅在多图展示时生效</p></blockquote> <p>通过设置<code>gap-row</code>和<code>gap-column</code>属性来更改多图时，图片的水平间隔和竖直间隔，默认值为<code>10</code>,单位<code>rpx</code>;</p> <h2 id="裁剪、缩放模式"><a href="#裁剪、缩放模式" class="header-anchor">#</a> 裁剪、缩放模式</h2> <p>单图情景和多图情景下的裁剪、缩放模式可单独设置，互相不受影响。组件根据传入<code>urls</code>长度自动选择对应裁剪、缩放方式进行图片展示。</p> <ol><li><p>单图
 属性<code>single-mode</code>可以更改单图展示时图片的裁剪、缩放模式，默认值<code>aspectFit</code>。</p></li> <li><p>多图<br>
-属性<code>multiple-mode</code>可以更改多图展示时图片的裁剪、缩放模式，默认值<code>aspectFill</code>。</p></li></ol> <p>:::img
+属性<code>multiple-mode</code>可以更改多图展示时图片的裁剪、缩放模式，默认值<code>aspectFill</code>。</p></li></ol> <p>
 <img src="/screenshots/album/image3.jpeg" alt="height=300">
-:::</p> <h3 id="示例代码-3"><a href="#示例代码-3" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;view&gt;
+</p> <h3 id="示例代码-3"><a href="#示例代码-3" class="header-anchor">#</a> 示例代码</h3> <div class="language-wxml extra-class"><pre class="language-text"><code>&lt;view&gt;
     &lt;view class=&quot;album&quot;&gt;
         &lt;l-avatar class=&quot;avatar&quot; size='80' shape=&quot;square&quot; src=&quot;&quot; /&gt;
         &lt;view class=&quot;right&quot;&gt;
